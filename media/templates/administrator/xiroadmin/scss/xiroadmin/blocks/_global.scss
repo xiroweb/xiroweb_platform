@@ -1,0 +1,202 @@
+
+
+body {
+  &.admin {
+    background-color: var(--xiroadmin-bg);
+  }
+}
+label,
+caption {
+  font-size: $label-font-size;
+  text-align: start;
+}
+.content {
+  @include media-breakpoint-up(md) {
+    padding: 0 1rem;
+
+    .subhead + & {
+      padding-top: 0;
+    }
+  }
+  form{
+    box-shadow: $xiroadmin-box-shadow;
+    border-radius: .5rem;
+    padding: .5rem;
+    background: var(--form-content-bg);
+
+    .btn {
+      padding: $xiroadmin-input-padding;
+    }
+  }
+
+}
+
+// Chosen (TEMPORARY)
+.chzn-container-single {
+  width: auto !important;
+}
+
+.custom-select, .form-select {
+    box-shadow: $xiroadmin-box-shadow;
+    padding: $xiroadmin-input-padding;
+    background-color: var(--xiroadmin-input-bg);
+    border-color: var(--border-color);
+
+    &:hover,
+    &:forcus {
+        box-shadow: $xiroadmin-box-shadow-2;
+    }
+    
+
+}
+
+.tox-tinymce {
+  box-shadow: $xiroadmin-box-shadow !important;
+}
+
+.form-inline {
+  .control-group {
+    .control-label {
+      width: auto;
+    }
+  }
+}
+.field-input-full-width {
+  .form-control {
+    width: 100%;
+  }
+}
+
+.btn-raised {
+  box-shadow: $xiroadmin-box-shadow;
+
+  &:hover {
+    box-shadow: $xiroadmin-box-shadow-2;
+  }
+}
+
+.btn-default {
+  color: var(--body-color);
+  background: var(--xiroadmin-btn-bg);
+}
+
+ul.toolbar-action-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.toolbar-action-list li {
+    display: inline-block;
+    margin: 0 10px 2px 0;
+}
+.bg-xiroadmin {
+  background-color: var(--template-bg-dark-50);
+  color: $gray-100;
+}
+.xiroadmin-card {
+  box-shadow: $xiroadmin-box-shadow-2;
+  background: var(--xiroadmin-card-bg);
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 20px;
+  border: var(--xiroadmin-darklight-border-width) solid var(--border-color);
+ 
+
+  &:hover {
+    box-shadow: $xiroadmin-box-shadow-3;
+    @include xiroadmin-transition;
+  }
+}
+
+
+button, a {
+
+  &.tbody-icon {
+    /* margin-top: .2rem; */
+
+    [class^="#{$jicon-css-prefix}-"],
+    [class*=" #{$jicon-css-prefix}-"],
+    [class^="#{$fa-css-prefix}-"],
+    [class*=" #{$fa-css-prefix}-"] {
+      box-shadow: $xiroadmin-box-shadow;
+    }
+    &:hover,
+    &:focus {
+
+        [class^="#{$jicon-css-prefix}-"],
+        [class*=" #{$jicon-css-prefix}-"],
+        [class^="#{$fa-css-prefix}-"],
+        [class*=" #{$fa-css-prefix}-"] {
+          box-shadow: $xiroadmin-box-shadow-2;
+        }
+
+    }
+  }
+
+}
+.btn-xiroadmin {
+  background-color: var(--template-bg-dark-50);
+  color: $gray-100;
+  &:hover {
+    background-color: var(--template-bg-dark-60);
+    color: $gray-100;
+  }
+}
+
+.card-xiro {
+  margin-top: 30px;
+  box-shadow: $xiroadmin-box-shadow-2;
+  border: none;
+  border-radius: 16px;
+  &:hover {
+    box-shadow: $xiroadmin-box-shadow-4;
+  }
+}
+.xiroadmin-transition {
+  &:hover {
+    @include xiroadmin-transition;
+  }
+}
+.xiroadmin-box-shadow{
+  &-1 {
+    box-shadow: $xiroadmin-box-shadow;
+  }
+  &-2 {
+    box-shadow: $xiroadmin-box-shadow-1;
+  }
+  &-3 {
+    box-shadow: $xiroadmin-box-shadow-2;
+  }
+  &-4 {
+    box-shadow: $xiroadmin-box-shadow-3;
+  }
+  &-hover-1 {
+    &:hover {
+      box-shadow: $xiroadmin-box-shadow-1;
+    }
+  }
+  &-hover-2 {
+    &:hover {
+      box-shadow: $xiroadmin-box-shadow-2;
+    }
+  }
+  &-hover-3 {
+    &:hover {
+      box-shadow: $xiroadmin-box-shadow-3;
+    }
+  }
+  &-hover-4 {
+    &:hover {
+      box-shadow: $xiroadmin-box-shadow-4;
+    }
+  }
+
+}
+
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom-color: #dee2e6;
+}
+.table>:not(:first-child) {
+  border-top: 1px solid #dee2e6;
+}

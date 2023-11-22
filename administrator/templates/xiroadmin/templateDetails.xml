@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="administrator" method="upgrade">
+	<name>Xiroadmin Administrator Template</name>
+	<element>xiroadmin</element>
+	<creationDate>2021-12-20</creationDate>
+	<author>Xiroweb</author>
+	<authorEmail>support@xiroweb.com</authorEmail>
+	<authorUrl>https://www.xiroweb.com</authorUrl>
+	<copyright>Copyright (c)2021-2021 Xiroweb All rights reserved.</copyright>
+	<license>GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html</license>
+	<version>5.0.2</version>
+	<description>Xiroadmin Administrator Template</description>
+	<inheritable>1</inheritable>	
+	<files>
+		<filename>component.php</filename>
+		<filename>cpanel.php</filename>
+		<filename>error.php</filename>
+		<filename>error_full.php</filename>
+		<filename>error_login.php</filename>
+		<filename>index.php</filename>
+		<filename>joomla.asset.json</filename>
+		<filename>login.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<media destination="templates/administrator/xiroadmin" folder="media">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>scss</folder>
+	</media>
+	<positions>
+		<!-- used directly in the template -->
+		<position>bottom</position>
+		<position>debug</position>
+		<position>menu</position>
+		<position>sidebar</position>
+		<position>status</position>
+		<position>title</position>
+		<position>top</position>
+		<position>toolbar</position>
+		<!-- used directly in a component and included here so the position will appear in the list of available positions -->
+		<position>cpanel</position>
+		<position>xiroadmin2</position>
+		<position>xiroadmin3</position>
+		<position>xiroadmin4</position>
+		<position>icon</position>
+		<position>login</position>
+		<position>customtop</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/tpl_xiroadmin.ini</language>
+		<language tag="en-GB">en-GB/tpl_xiroadmin.sys.ini</language>
+		<language tag="vn-VN">vn-VN/tpl_xiroadmin.ini</language>
+		<language tag="vn-VN">vn-VN/tpl_xiroadmin.sys.ini</language>
+		<language tag="vi-VN">vi-VN/tpl_xiroadmin.ini</language>
+		<language tag="vi-VN">vi-VN/tpl_xiroadmin.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="colors" label="TPL_XIROADMIN_COLORS_SETTINGS_LABEL">
+				<field
+					name="hue"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_HUE"
+					format="hue"
+					control="slider"
+					preview="true"
+					saveFormat="hsl"
+					default="hsl(214,63%,20%)"
+				/>
+				<field
+					name="bg-light"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_BG_LIGHT_LABEL"
+					default="#f0f4fb"
+					filter="color"
+				/>
+				<field
+					name="text-dark"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_TEXT_DARK_LABEL"
+					default="#495057"
+					filter="color"
+				/>
+				<field
+					name="text-light"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_TEXT_LIGHT_LABEL"
+					default="#ffffff"
+					filter="color"
+				/>
+				<field
+					name="link-color"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_LINK_COLOR_LABEL"
+					default="#3071a9"
+					filter="color"
+				/>
+                <field
+					name="link-color-dark"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_LINK_COLOR_DARK_LABEL"
+					default="#29b6f6"
+					filter="color"
+				/>
+				<field
+					name="special-color"
+					type="color"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_SPECIAL_COLOR_LABEL"
+					default="#001B4C"
+					filter="color"
+				/>
+				<field
+					name="monochrome"
+					type="radio"
+					label="TPL_XIROADMIN_COLORS_SETTINGS_MONOCHROME_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+                <field
+					name="colordefaultbyxiroadmin"
+					type="radio"
+					label="TPL_XIROADMIN_COLORS_DEFAULT_BY_XIROADMIN_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="images" label="TPL_XIROADMIN_IMAGE_SETTINGS_LABEL">
+				<fieldset name="loginLogo" label="TPL_XIROADMIN_LOGIN_LOGO_LABEL">
+					<field
+						name="loginLogo"
+						type="media"
+						label="TPL_XIROADMIN_IMAGE_LABEL"
+					/>
+					<field
+						name="loginLogoAlt"
+						type="text"
+						label="TPL_XIROADMIN_LOGO_ALT_LABEL"
+					/>
+					<field
+						name="emptyLoginLogoAlt"
+						type="checkbox"
+						label="TPL_XIROADMIN_LOGO_ALT_EMPTY_LABEL"
+						description="TPL_XIROADMIN_LOGO_ALT_EMPTY_DESC"
+					/>
+				</fieldset>
+				<fieldset name="logoBrandLarge" label="TPL_XIROADMIN_SITE_LOGO_LABEL">
+					<field
+						name="logoBrandLarge"
+						type="media"
+						label="TPL_XIROADMIN_IMAGE_LABEL"
+					/>
+					<field
+						name="logoBrandLargeAlt"
+						type="text"
+						label="TPL_XIROADMIN_LOGO_ALT_LABEL"
+					/>
+					<field
+						name="emptyLogoBrandLargeAlt"
+						type="checkbox"
+						label="TPL_XIROADMIN_LOGO_ALT_EMPTY_LABEL"
+						description="TPL_XIROADMIN_LOGO_ALT_EMPTY_DESC"
+					/>
+				</fieldset>
+				<fieldset name="logoBrandSmall" label="TPL_XIROADMIN_SITE_LOGO_SMALL_LABEL">
+					<field
+						name="logoBrandSmall"
+						type="media"
+						label="TPL_XIROADMIN_IMAGE_LABEL"
+					/>
+					<field
+						name="logoBrandSmallAlt"
+						type="text"
+						label="TPL_XIROADMIN_LOGO_ALT_LABEL"
+					/>
+					<field
+						name="emptyLogoBrandSmallAlt"
+						type="checkbox"
+						label="TPL_XIROADMIN_LOGO_ALT_EMPTY_LABEL"
+						description="TPL_XIROADMIN_LOGO_ALT_EMPTY_DESC"
+					/>
+				</fieldset>
+			</fieldset>
+			<fieldset name="uiIntegration" label="TPL_XIROADMIN_UI_INTEGRATION_SETTINGS_LABEL">
+				<field
+					name="virtuemart-ui"
+					type="radio"
+					label="TPL_XIROADMIN_UI_VIRTUEMART_INTEGRATION_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

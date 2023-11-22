@@ -1,0 +1,49 @@
+
+.js-stools {
+
+  .custom-select, .form-select {
+    padding: .2rem 3rem .2rem 1rem;
+    font-size: .8125rem;
+
+  }
+  .form-control {
+    padding: 0 1rem;
+    font-size: .8125rem;
+
+  }
+  .btn {
+    padding: 0 1rem;
+    font-size: .8125rem;
+    background: var(--xiroadmin-input-bg);
+    box-shadow: $xiroadmin-box-shadow;
+    border: none;
+    color: var(--body-color);
+
+    &:hover,
+    &:focus {
+      box-shadow: $xiroadmin-box-shadow-2;
+      color: var(--body-color);
+      background: var(--xiroadmin-input-bg-2);
+    }
+  }
+}
+
+
+.js-stools-container-bar {
+
+  .btn-toolbar {
+    .js-stools-btn-clear {
+      background-color: $xiroadmin-input-bg;
+      border: 0;
+      color: $red;
+    }
+  }
+}
+
+.js-stools-container-selector {
+  margin: 5px 5px 5px 10px;
+  margin-inline-end: 8px;
+}
+select#filter_position {
+  border: 2px solid #ff9e7f;
+}

@@ -1,0 +1,25 @@
+.com_content.layout-edit {
+  .image-media-select {
+    position: relative;
+    & > .control-group {
+      flex-direction: column;
+    }
+    button.edit_attribute {
+      position: absolute;
+      top: 2rem;
+    }
+  }
+}
+#articleList {
+  .small, small {
+    font-size: .7rem;
+    font-weight: 400;
+  }
+  .badge {
+    font-size: .7rem;
+    font-weight: 400;
+    padding: .3rem .35rem;
+  }
+
+}
+

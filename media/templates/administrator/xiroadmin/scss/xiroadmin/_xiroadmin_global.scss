@@ -1,0 +1,14 @@
+
+:root {
+    @each $color, $value in $xiroadmin-colors {
+      --#{$prefix}#{$color}: #{$value};
+    }
+  }
+
+@if $enable-dark-mode {
+    @include color-mode(dark, true) {
+      @each $color, $value in $xiroadmin-colors-dark {
+        --#{$prefix}#{$color}: #{$value};
+      }
+    }
+  }

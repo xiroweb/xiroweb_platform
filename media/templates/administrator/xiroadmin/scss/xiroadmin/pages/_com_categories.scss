@@ -1,0 +1,30 @@
+.category-item-title {
+  color: #FF9800;
+  display: inline;
+
+  a {
+    color: #FF9800;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+
+}
+#categoryList {
+  .small, small {
+    font-weight: 400;
+  }
+}
+
+.box-page-icon {
+  display: inline-block;
+  margin-top: -20px;
+  background: #FFF;
+  border-radius: 6px;
+  margin-left: -8px;
+}
+.category-icon i {
+  color: #FF9800;
+}

@@ -1,0 +1,18 @@
+// Quick Icons
+
+.quick-icons {
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+  .quickicon {
+    --text-color: var(--body-color);
+    --bg-color: var(--xiroadmin-set1-bg);
+    --icon-color: var(--template-bg-dark-50);
+    --bg-color-hvr: var(--template-bg-dark-60);
+  }
+}
+.quickicon-linkadd {
+    .quickicon-linkadd {
+        // background-color: ;
+    }
+}

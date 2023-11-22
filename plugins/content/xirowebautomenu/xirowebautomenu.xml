@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3.0" type="plugin" group="content" method="upgrade">
+        <name>plg_content_xirowebautomenu</name>
+        <element>xirowebautomenu</element>
+        <author>Dustin Dzung</author>
+        <creationDate>October 2020</creationDate>
+        <copyright>Copyright (C) 2020 XiroWeb. All rights reserved.</copyright>
+        <license>GNU General Public License version 2 or later;</license>
+        <authorEmail>support@xiroweb.com</authorEmail>
+        <authorUrl>www.xiroweb.com</authorUrl>
+        <version>2.2.1</version>
+        <namespace path="src">Xiroweb\Plugin\Content\Xirowebautomenu</namespace>
+        <description>PLG_CONTENT_XIROWEBAUTOMENU_DESCRIPTION</description>
+        <files>
+                <filename plugin="xirowebautomenu">xirowebautomenu.php</filename>
+                <filename>index.html</filename>
+                <folder>form</folder>
+                <folder>language</folder>
+        </files>
+        <languages>
+            <language tag="en-GB">language/en-GB/plg_content_xirowebautomenu.ini</language>
+            <language tag="en-GB">language/en-GB/plg_content_xirowebautomenu.sys.ini</language>
+            <language tag="vn-VN">language/vn-VN/plg_content_xirowebautomenu.ini</language>
+            <language tag="vn-VN">language/vn-VN/plg_content_xirowebautomenu.sys.ini</language>
+            <language tag="vi-VN">language/vi-VN/plg_content_xirowebautomenu.ini</language>
+            <language tag="vi-VN">language/vi-VN/plg_content_xirowebautomenu.sys.ini</language>
+        </languages>
+        <updateservers>
+            <server type="extension" priority="1" name="Update plugin XiroWeb AutoMenu">https://www.xiroweb.com/updates/pkg_xirowebautomenu.xml</server>
+        </updateservers>
+</extension>

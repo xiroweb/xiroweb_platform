@@ -1,0 +1,30 @@
+
+.content {
+    .card {
+        box-shadow: $xiroadmin-box-shadow;
+        @include xiroadmin-transition;
+        &:hover {
+            box-shadow: $xiroadmin-box-shadow-1;
+          }
+      }
+}
+.com_templates {
+    .content {
+        .card {
+            box-shadow: $xiroadmin-box-shadow-2 !important;
+            @include xiroadmin-transition;
+            border: var(--xiroadmin-darklight-border-width) solid var(--border-color);
+            &:hover {
+                box-shadow: $xiroadmin-box-shadow-4 !important;
+            }
+        }
+    }
+}
+
+.com_cpanel {
+  .card-header {
+    --card-bg: var(--body-bg);
+    color: var(--body-color);
+
+  }
+}

@@ -1,0 +1,36 @@
+// Edit Form
+
+.title-alias {
+  
+  input#jform_title {
+    width: 100%;
+    padding: .6rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  input#jform_alias {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px dashed var(--xiroadmin-input-alias-border-color);
+    font-style: italic;
+    padding-bottom: 0;
+    width: 100%;
+    // color: #555;
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+
+
+  }
+}
+
+
+label#jform_catid-lbl, label#jform_parent_id-lbl {
+  background: url('../images/admin/folder-open.png') no-repeat left center;
+  padding-left: 30px;
+}
+label#jform_tags-lbl{
+  background: var(--xiroadmin-tag-icon-url) no-repeat left center;
+  padding-left: 30px;
+}

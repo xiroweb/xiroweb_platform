@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile client="installation">
+	<name>Vietnam </name>
+	<version>4.0.4</version>
+	<creationDate>October 2021</creationDate>
+	<author>XirowebPlatform Project</author>
+	<copyright>(C) Xiroweb</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<files>
+		<filename>joomla.ini</filename>
+	</files>
+	<metadata>
+		<name>Vietnam (vn-VN)</name>
+		<nativeName>Vietnam</nativeName>
+		<tag>vn-VN</tag>
+		<rtl>0</rtl>
+	</metadata>
+	<params />
+</metafile>

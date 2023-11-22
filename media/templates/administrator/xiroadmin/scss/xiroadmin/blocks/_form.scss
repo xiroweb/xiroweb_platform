@@ -1,0 +1,92 @@
+.form-control {
+    background-color: var(--xiroadmin-input-bg);
+    border: var(--xiroadmin-darklight-border-width) solid var(--border-color);
+    border-radius: $border-radius;
+    box-shadow: $xiroadmin-box-shadow;
+    padding: $xiroadmin-input-padding;
+
+
+    &:focus {
+        border-color: $focuscolor;
+        box-shadow: $xiroadmin-input-box-shadow;
+        background-color: var(--xiroadmin-input-bg);
+    
+      }
+    &:hover:not(:disabled):not([readonly])::-webkit-file-upload-button,
+    &:hover:not(:disabled):not([readonly])::file-selector-button {
+        // background-color: var(--template-bg-dark-50);
+        background-color: $white;
+    }
+    &::placeholder {
+        // font-size: .8rem;
+        // font-style: italic;
+        font-size: inherit;
+        font-style: inherit;
+    }
+    
+    &::-webkit-file-upload-button,
+    &::file-selector-button {
+        // background-color: var(--template-bg-dark-70);
+        background-color: $white;
+    }
+
+    &:disabled, &[readonly] {
+        background-color: var(--xiroadmin-input-bg);
+    }
+}
+
+div.subform-repeatable-group {
+    border: $input-border;
+    border-radius: $border-radius;
+    > .btn-toolbar {
+        .btn {
+            &.group-move {
+                padding: 0;
+                margin-top: -27px;
+                line-height: 52px;
+                border-radius: $border-radius 0 0 $border-radius;
+            }
+        }
+    }
+}
+.choices__inner {
+    font-weight: 700;
+  }
+  .choices__list--dropdown {
+    background-color: #F6F6F6;
+    box-shadow: $xiroadmin-box-shadow-1;
+  
+    .choices__item {
+      font-weight: 700;
+      padding: 6px;
+    }
+  
+  }
+  .choices[data-type*=select-one] .choices__input {
+    // border: 8px solid #F6F6F6;
+    border: 8px solid var(--border-color);
+    padding: 5px;
+    font-style: italic;
+  }
+
+.choices[data-type*="select-one"],
+.choices[data-type*="select-multiple"] {
+    
+    .choices__inner {
+    background-color: var(--xiroadmin-input-bg);
+    background: var(--xiroadmin-input-bg);
+
+        [dir="rtl"] & {
+        background-color: var(--xiroadmin-input-bg);
+        background: var(--xiroadmin-input-bg);
+
+        }
+    }
+
+}
+
+.choices__list--multiple .choices__item {
+    
+    border: var(--xiroadmin-darklight-border-width) solid var(--border-color);
+      
+}

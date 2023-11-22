@@ -1,0 +1,13 @@
+
+.form-select {
+  &:focus {
+    border-color: $focuscolor;
+    box-shadow: $focusshadow;
+  }
+  &:disabled {
+    background: $gray-200;
+  }
+  option {
+    color: var(--body-color);
+  }
+}

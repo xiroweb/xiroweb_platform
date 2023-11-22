@@ -1,0 +1,130 @@
+
+.btn-xiroadmin {
+    background-color: var(--template-bg-dark-50);
+    color: #f8f9fa;
+  }
+  .btn-xiroadmin:hover {
+    background-color: var(--template-bg-dark-60);
+    color: #f8f9fa;
+  }
+  
+  .card-xiro {
+    margin-top: 30px;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    border-radius: 16px;
+  }
+  .card-xiro:hover {
+    -webkit-box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 20px 14px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 20px 14px rgba(0, 0, 0, 0.22);
+  }
+  
+  .xiroadmin-transition:hover {
+    transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+  }
+  
+  .xiroadmin-box-shadow-1 {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  .xiroadmin-box-shadow-2 {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  .xiroadmin-box-shadow-3 {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  .xiroadmin-box-shadow-4 {
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  .xiroadmin-box-shadow-hover-1:hover {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  .xiroadmin-box-shadow-hover-2:hover {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  .xiroadmin-box-shadow-hover-3:hover {
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  .xiroadmin-box-shadow-hover-4:hover {
+    -webkit-box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 20px 14px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 20px 14px rgba(0, 0, 0, 0.22);
+  }
+
+  .headerxiroweb {
+    background-color: #ffffff;
+    background-image: linear-gradient(#d9effa, #d9effa 25%, #ffffff);
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9effa", endColorstr="#ffffff", GradientType=0);
+    border-top: 3px solid #0088cc;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+
+div#container-installation {
+    padding: 10px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .form-control {
+    background-color: #daeefd;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #2196f3;
+    border-color: #2196f3;
+  }
+  
+  label {
+    font-weight: 700;
+    color: #000;
+  }
+  
+  .field-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  
+  .main-content {
+    margin-bottom: 5rem;
+  }
+  
+  .alert-success {
+    color: #008c06;
+    background-color: #dfffe7;
+    border-color: #c7d8cc;
+  }
+  .alert-success h2, .alert-success .h2 {
+    color: #008c06;
+  }
+
+  body .container-main{
+    background: #FFFFFF;;
+  }
+  .j-container {
+    max-width: 60rem;
+  }
+  form#languageForm {
+    display: none;
+}

@@ -1,0 +1,10 @@
+@if $enable-dark-mode {
+    @include color-mode(dark) {
+        .list-group-flush {
+            > .list-group-item {
+                --list-group-border-color: var(--template-bg-dark-70);
+            }
+          }
+    }
+  }
+

@@ -1,0 +1,41 @@
+.subhead {
+  .btn {
+    padding: .2rem 1rem;
+    margin: .313rem 0;
+    background-color: var(--xiroadmin-btn-bg);
+    box-shadow: $xiroadmin-box-shadow;
+    border: 1px solid transparent;
+    color: var(--body-color);
+    @include media-breakpoint-up(md){
+      font-size: .9rem;
+      line-height: 1.6rem;
+    }
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background-color: var(--xiroadmin-btn-hover-bg);
+      color: var(--body-color);
+      border: 1px solid var(--xiroadmin-btn-tbar-border-color);
+      > span {
+        color: var(--body-color);
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: $xiroadmin-box-shadow-2;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+    
+  .toggler-toolbar {
+    background-color: $xiroadmin-blue-3;
+    color: $gray-100;
+    box-shadow: $xiroadmin-box-shadow-2;
+  }
+
+  .subhead {
+    background: var(--xiroadmin-tbar-bg); 
+  }
+}

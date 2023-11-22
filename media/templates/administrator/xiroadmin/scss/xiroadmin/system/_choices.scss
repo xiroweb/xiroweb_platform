@@ -1,0 +1,8 @@
+.choices .choices__list--dropdown {
+    .choices__item--selectable {
+          &.is-highlighted {
+            background-color: var(--xiroadmin-input-bg);
+          }
+      
+    }
+  }

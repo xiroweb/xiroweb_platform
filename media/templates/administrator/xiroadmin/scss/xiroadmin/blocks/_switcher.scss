@@ -1,0 +1,16 @@
+.switcher {
+  .toggle-outside {
+    border: $input-border;
+    border-radius: $border-radius;
+    box-shadow: $xiroadmin-box-shadow;
+
+    &:focus {
+      box-shadow: $xiroadmin-box-shadow-2;
+    }
+  }
+  input:focus ~ .toggle-outside {
+    border-color: $focuscolor;
+    box-shadow: $xiroadmin-box-shadow-2;
+  }
+
+}

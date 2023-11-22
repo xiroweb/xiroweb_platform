@@ -1,0 +1,57 @@
+// Bootstrap functions
+@import "../../../../../../media/vendor/bootstrap/scss/functions";
+
+$color-mode-type: data;
+@import "xiroadmin/variables_xiroadmin";
+@import "xiroadmin/variables-xiroadmin-dark";
+
+
+// Atum Variables
+@import "variables";
+@import "variables-dark";
+
+@import "../../../../../../media/vendor/bootstrap/scss/variables";
+@import "../../../../../../media/vendor/bootstrap/scss/variables-dark";
+@import "../../../../../../media/vendor/bootstrap/scss/maps";
+@import "maps";
+@import "../../../../../../media/vendor/bootstrap/scss/mixins";
+@import "../../../../../../media/vendor/bootstrap/scss/utilities";
+
+@import "xiroadmin/xiroadmin_global";
+
+@import "xiroadmin/blocks/edit";
+@import "xiroadmin/blocks/form";
+@import "xiroadmin/blocks/global";
+@import "xiroadmin/blocks/header";
+@import "xiroadmin/blocks/icons";
+@import "xiroadmin/blocks/login";
+@import "xiroadmin/blocks/quickicons";
+@import "xiroadmin/blocks/sidebar-nav";
+@import "xiroadmin/blocks/sidebar";
+@import "xiroadmin/blocks/switcher";
+@import "xiroadmin/blocks/toolbar";
+@import "xiroadmin/blocks/treeselect";
+@import "xiroadmin/blocks/layout";
+
+@import "xiroadmin/pages/com_categories";
+@import "xiroadmin/pages/com_content";
+@import "xiroadmin/pages/com_cpanel";
+@import "xiroadmin/pages/com_modules";
+@import "xiroadmin/pages/com_templates";
+
+@import "xiroadmin/system/searchtools/searchtools";
+
+@import "xiroadmin/bootstrap/buttons";
+@import "xiroadmin/bootstrap/card";
+@import "xiroadmin/bootstrap/custom-forms";
+@import "xiroadmin/bootstrap/table";
+@import "xiroadmin/bootstrap/collapse";
+@import "xiroadmin/bootstrap/list-group";
+
+@import "xiroadmin/joomla-custom-elements/joomla-alert";
+@import "xiroadmin/joomla-custom-elements/joomla-tab";
+@import "xiroadmin/system/joomla-field-media";
+@import "xiroadmin/system/com_media";
+@import "xiroadmin/system/choices";
+
+

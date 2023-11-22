@@ -1,0 +1,31 @@
+
+.tbody-icon {
+
+
+  [class^="#{$jicon-css-prefix}-"],
+  [class*=" #{$jicon-css-prefix}-"],
+  [class^="#{$fa-css-prefix}-"],
+  [class*=" #{$fa-css-prefix}-"] {
+    width: 22px;
+    height: 22px;
+    font-size: .78rem;
+    line-height: 19px;
+  }
+
+  .#{$jicon-css-prefix}-archive {
+    color: var(--template-text-dark);
+    border-color: $gray-700;
+  }
+
+
+}
+
+.icon-install {
+  &::before {
+    content: "\f381";
+  }
+}
+
+.icon-unpublish:before {
+  content: "\f04d" !important;
+}

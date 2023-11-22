@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "xiroadmin",
+  "version": "4.0.0",
+  "description": "This file contains details of the assets used by Xiroadmin, the default Joomla 4 administrator template.",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.xiroadmin.ltr",
+      "description": "The css file to be used when the site is left to right (LTR).",
+      "type": "style",
+      "uri": "template.min.css",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.xiroadmin.rtl",
+      "description": "The css file to be used when the site is right to left (RTL).",
+      "type": "style",
+      "uri": "template-rtl.min.css",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.active.language",
+      "description": "An asset to allow language specific css, eg 'language/[lang-CODE]/[lang-CODE].css', to use it as a dependency to the active template",
+      "type": "style",
+      "uri": "",
+      "class": "LangActiveAssetItem",
+      "client": "administrator",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.xiroadmin",
+      "description": "XiroAdmin css.",
+      "type": "style",
+      "weight": 499,
+      "uri": "xiroadmin.css",
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.user",
+      "description": "A file where a user can add their own css.",
+      "type": "style",
+      "weight": 500,
+      "uri": "user.css",
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.xiroadmin-es5",
+      "description": "The file containing the javascript for this template.",
+      "type": "script",
+      "uri": "template-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      }
+    },
+    {
+      "name": "template.xiroadmin",
+      "description": "The file containing the javascript for this template.",
+      "type": "script",
+      "uri": "template.min.js",
+      "dependencies": [
+        "template.xiroadmin-es5"
+      ],
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "template.active",
+      "description": "A dummy asset to allow extensions to use it as a dependency to the active template",
+      "type": "script",
+      "uri": "",
+      "dependencies": [
+        "template.xiroadmin"
+      ]
+    },
+    {
+      "name": "template.xiroadmin.base",
+      "type": "preset",
+      "dependencies": [
+        "core#script",
+        "template.xiroadmin#script"
+      ]
+    },
+    {
+      "name": "template.xiroadmin.ltr",
+      "type": "preset",
+      "dependencies": [
+        "template.xiroadmin.base",
+        "template.xiroadmin.ltr#style"
+      ]
+    },
+    {
+      "name": "template.xiroadmin.rtl",
+      "type": "preset",
+      "dependencies": [
+        "template.xiroadmin.base",
+        "template.xiroadmin.rtl#style"
+      ]
+    },
+    {
+      "name": "searchtools",
+      "type": "style",
+      "uri": "system/searchtools/searchtools.min.css"
+    },
+    {
+        "name": "awesomplete",
+        "type": "style",
+        "uri": "vendor/awesomplete/awesomplete.min.css"
+      },
+      {
+        "name": "choicesjs",
+        "type": "style",
+        "uri": "vendor/choicesjs/choices.min.css"
+      },
+      {
+        "name": "webcomponent.joomla-alert",
+        "type": "style",
+        "uri": "vendor/joomla-custom-elements/joomla-alert.min.css"
+      },
+      {
+        "name": "webcomponent.joomla-tab",
+        "type": "style",
+        "uri": "vendor/joomla-custom-elements/joomla-tab.min.css"
+      },
+      {
+        "name": "minicolors",
+        "type": "style",
+        "uri": "vendor/minicolors/jquery.minicolors.css"
+      },
+    {
+      "name": "template.uiintegration.virtuemart",
+      "type": "style",
+      "uri": "ui-virtuemart.min.css",
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+        "name": "xiroadmin.colormodes",
+        "description": "Boostrap Color Modes.",
+        "type": "script",
+        "uri": "colormodes.min.js",
+        "dependencies": [
+          "core"
+        ],
+        "attributes": {
+          "defer": false
+        }
+      }
+  ]
+}

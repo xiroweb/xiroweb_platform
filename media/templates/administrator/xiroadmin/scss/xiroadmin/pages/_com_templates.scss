@@ -1,0 +1,116 @@
+// com_templates
+.com_templates {
+  .content form {
+    padding: 1rem .9rem 2rem .9rem;
+  }
+}
+
+.templates-list {
+  .card {
+    position: relative;
+    color: var(--body-color);
+    font-size: .8rem;
+    img {
+      border-radius: 16px 16px 0 0;
+    }
+    .card-body {
+      margin: 0;
+      color: var(--body-color);
+    }
+  }
+  .button-check-theme {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .card-body {
+    a.tbody-icon {
+      box-shadow: $xiroadmin-box-shadow;
+      border-color: #4285f4;
+      border-width: 1px;
+      border-style: solid;
+      background-color: #FFF;
+      color: #4285f4;
+      padding: 8px 16px;
+      border-radius: 3px;
+
+      &:hover {
+        box-shadow: $xiroadmin-box-shadow-2;
+        background-color: #e6e6e6;
+        @include xiroadmin-transition;
+      }
+    }
+    span.tbody-icon {
+      box-shadow: $xiroadmin-box-shadow-1;
+      border-color: #ffc107;
+      border-width: 1px;
+      border-style: solid;
+      background-color: #ffc107;
+      color: $gray-700;
+      padding: 8px 16px;
+      border-radius: 3px;
+
+      .icon-color-featured {
+        color: $black;
+        border-color: $black;
+      }
+    }
+
+     [role=tooltip] {
+      display: none;
+    }
+  }
+
+  .action-area {
+    margin-top: 10px;
+  }
+
+    .form-check-input[type=checkbox] {
+        border-radius: 0.35em;
+        width: 1.2rem;
+        height: 1.2rem;
+        box-shadow: $xiroadmin-box-shadow-2;
+        border-color: #34aa00;
+    }
+}
+
+.com_templates.layout-edit {
+
+  .subhead {
+    // background: #f0f0f1;
+    background-image: unset;
+  }
+
+  .content {
+    padding: 0 5px !important;
+  }
+  #system-message-container {
+    joomla-alert {
+      z-index: 1030;
+    }
+    @include media-breakpoint-up(md) {
+      width: 18%;
+    }
+  }
+  .modal-backdrop {
+    z-index: 998;
+  }
+  .modal-dialog {
+    margin: 3rem auto;
+    box-shadow: $xiroadmin-box-shadow-5;
+  }
+  .title-alias {
+    .control-group {
+      margin: 0 !important;
+    }
+    input#jform_title {
+      padding: .3rem !important;
+      box-shadow: none !important;
+      color: var(--template-bg-dark-40);
+      font-size: 2rem;
+    }
+    .control-label {
+      display: none;
+    }
+  }
+}

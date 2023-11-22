@@ -1,0 +1,11 @@
+  @if $enable-dark-mode {
+    @include color-mode(dark) {
+        .accordion {
+            .list-group-item {
+                --list-group-bg: var(--xiroadmin-input-bg);
+                --list-group-border-color: var(--template-bg-dark-65);
+            }
+        }
+    }
+  }
+

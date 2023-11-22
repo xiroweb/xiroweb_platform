@@ -1,0 +1,42 @@
+// Table
+
+.table {
+    > :not(:first-child) {
+        border-top: 0px solid #dee2e6;
+    }
+  thead {
+    th {
+      font-size: .9rem;
+    }
+  }
+
+  tbody {
+    a:not(.badge):not(.btn):not(.dropdown-item) {
+      text-decoration: none;
+    }
+  }
+  
+  .j-main-container > & {
+    thead, tbody, tfoot{
+      tr{
+        th, td {
+          border-top: 1px solid var(--xiroadmin-tablecontent-border-color);
+        }
+      }
+    }
+
+    tbody{
+      tr{
+        &:nth-child(odd){
+          td,th {
+            background-color: var(--list-odd-bg);
+          }
+        }
+      }
+    }
+    > :not(caption) > * > * {
+      border-bottom-width: 0;
+      padding: .51rem .2rem;
+    }
+  }
+}

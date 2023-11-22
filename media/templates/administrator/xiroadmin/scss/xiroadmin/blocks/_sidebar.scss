@@ -1,0 +1,90 @@
+// Sidebar
+
+.sidebar-wrapper {
+    --template-sidebar-bg: #12282d;
+    background-color: var(--template-sidebar-bg);
+  .item {
+    a,
+    .menu-dashboard,
+    .menu-quicktask {
+      color: $gray-300;
+    }
+    > a {
+      [class^="#{$jicon-css-prefix}-"],
+      [class*=" #{$jicon-css-prefix}-"],
+      [class^="#{$fa-css-prefix}-"],
+      [class*=" #{$fa-css-prefix}-"] {
+        margin: 0 .6rem;
+      }
+    }
+    &-level-1 {
+      border-bottom: 1px solid #161c21;
+    }
+    & > a[target=_blank] {
+      padding: 0 .6rem;
+      > span.sidebar-item-title {
+        padding-left: .4rem;
+      }
+    }
+  }
+
+  .sidebar-toggle {
+    background: $xiroadmin-bg-bluegray;
+    font-size: .815rem;
+    a {
+      color: $gray-300;
+    }
+  }
+}
+
+// Sidebar navigation
+.main-nav {
+  font-size: .815rem;
+  @include media-breakpoint-down(sm) {
+    font-size: .95rem;
+  }
+  // 2nd level items
+  ul {
+    background-color: $xiroadmin-bg-bluegray-2;
+  }
+}
+
+// Sidebar Closed
+.closed {
+  .sidebar-wrapper {
+    .item {
+      > a {
+        [class^="#{$jicon-css-prefix}-"],
+        [class*=" #{$jicon-css-prefix}-"],
+        [class^="#{$fa-css-prefix}-"],
+        [class*=" #{$fa-css-prefix}-"] {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+    .toggler-burger {
+      display: initial;
+    }
+  }
+// xiroadmin
+@include media-breakpoint-up(md) {
+  .toggler-burger {
+    display: none;
+  }
+}
+
+// Mobile xiroadmin
+@include media-breakpoint-down(md) {
+  .toggler-burger {
+    right: auto;
+    left: 80vw;
+    [dir="rtl"] & {
+      right: auto;
+      left: 0;
+    }
+  }
+}

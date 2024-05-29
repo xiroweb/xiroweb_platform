@@ -115,6 +115,13 @@
     border-radius: 0px;
   }
 }
+@if $enable-dark-mode {
+    @include color-mode(dark) {
+      .header-item-icon > * {
+        background: none;
+      }
+    }
+}
 
 .header-dd-items {
   .header-item-content {

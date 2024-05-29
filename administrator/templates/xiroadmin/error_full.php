@@ -16,7 +16,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var \Joomla\CMS\Document\ErrorDocument $this */
 
 $app   = Factory::getApplication();
-$input = $app->input;
+$input = $app->getInput();
 $wa    = $this->getWebAssetManager();
 
 // Detecting Active Variables
@@ -25,7 +25,7 @@ $view       = $input->get('view', '');
 $layout     = $input->get('layout', 'default');
 $task       = $input->get('task', 'display');
 $cpanel     = $option === 'com_cpanel';
-$hiddenMenu = $app->input->get('hidemainmenu');
+$hiddenMenu = $app->getInput()->get('hidemainmenu');
 
 // Browsers support SVG favicons
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
@@ -34,11 +34,11 @@ $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], t
 
 // Template params
 $logoBrandLarge  = $this->params->get('logoBrandLarge')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
 $logoBrandSmall = $this->params->get('logoBrandSmall')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
 
 $logoBrandLargeAlt = empty($this->params->get('logoBrandLargeAlt')) && empty($this->params->get('emptyLogoBrandLargeAlt'))
 	? 'alt=""'
@@ -94,8 +94,9 @@ $statusModules = LayoutHelper::render('status', ['modules' => 'status']);
 		<div class="header-title d-flex">
 			<div class="d-flex align-items-center">
 				<div class="logo">
-					<img src="<?php echo $logoBrandLarge; ?>" <?php echo $logoBrandLargeAlt; ?>>
-					<img class="logo-collapsed" src="<?php echo $logoBrandSmall; ?>" <?php echo $logoBrandSmallAlt; ?>>
+                    <?php echo HTMLHelper::_('image', $logoBrandLarge, $logoBrandLargeAlt, ['loading' => 'eager', 'decoding' => 'async'], false, 0); ?>
+                    <?php echo HTMLHelper::_('image', $logoBrandSmall, $logoBrandSmallAlt, ['class' => 'logo-collapsed', 'loading' => 'eager', 'decoding' => 'async'], false, 0); ?>
+             
 				</div>
 			</div>
 			<jdoc:include type="modules" name="title" />

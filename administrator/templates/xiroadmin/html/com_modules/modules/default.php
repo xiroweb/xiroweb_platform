@@ -21,7 +21,12 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
 use Joomla\CMS\Uri\Uri;
 
-HTMLHelper::_('behavior.multiselect');
+/** @var \Joomla\Component\Modules\Administrator\View\Modules\HtmlView $this */
+
+/** @var \Joomla\CMS\WebAsset\WebAssetManager $wa */
+$wa = $this->document->getWebAssetManager();
+$wa->useScript('table.columns')
+    ->useScript('multiselect');
 
 $app = Factory::getApplication();
 $input = $app->input;
@@ -39,7 +44,7 @@ $roottemplate = $input->get('roottemplate', '', 'CMD');
 
 
 $clientId  = (int) $this->state->get('client_id', 0);
-$user      = Factory::getUser();
+$user      = $this->getCurrentUser();
 $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn  = $this->escape($this->state->get('list.direction'));
 $saveOrder = ($listOrder == 'a.ordering');
@@ -227,15 +232,7 @@ if (!$template_positions_display) {
 		<?php if ($user->authorise('core.create', 'com_modules')
 			&& $user->authorise('core.edit', 'com_modules')
 			&& $user->authorise('core.edit.state', 'com_modules')) : ?>
-			<?php echo HTMLHelper::_(
-				'bootstrap.renderModal',
-				'collapseModal',
-				array(
-					'title'  => Text::_('COM_MODULES_BATCH_OPTIONS'),
-					'footer' => $this->loadTemplate('batch_footer'),
-				),
-				$this->loadTemplate('batch_body')
-			); ?>
+			<template id="joomla-dialog-batch"><?php echo $this->loadTemplate('batch_body'); ?></template>
 		<?php endif; ?>
 		<input type="hidden" name="task" value="">
 		<input type="hidden" name="boxchecked" value="0">

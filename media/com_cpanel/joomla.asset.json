@@ -8,14 +8,14 @@
     {
       "name": "com_cpanel.admin-addmodule",
       "type": "script",
-      "uri": "com_cpanel/admin-add_module.min.js",
+      "uri": "",
       "dependencies": [
         "core"
       ],
       "attributes": {
         "type": "module"
       },
-      "version": "eed527"
+      "deprecated": true
     },
     {
       "name": "com_cpanel.admin-cpanel",
@@ -27,7 +27,7 @@
       "attributes": {
         "type": "module"
       },
-      "version": "433d95"
+      "version": "5ca2c9"
     },
     {
       "name": "com_cpanel.admin-system-loader",
@@ -37,10 +37,9 @@
         "core"
       ],
       "attributes": {
-        "type": "module",
-        "defer": true
+        "type": "module"
       },
-      "version": "43ff08"
+      "version": "70012e"
     }
   ]
 }

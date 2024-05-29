@@ -36,7 +36,7 @@ class Pkg_XiroadminInstallerScript
 	 *
 	 * @var   string
 	 */
-	protected $minimumJoomlaVersion = '4.2.0';
+	protected $minimumJoomlaVersion = '5.1.0';
 
 	/**
 	 * The maximum Joomla! version this extension can be installed on

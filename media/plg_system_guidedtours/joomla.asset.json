@@ -17,7 +17,7 @@
       "name": "plg_system_guidedtours.guidedtours",
       "type": "style",
       "uri": "plg_system_guidedtours/guidedtours.min.css",
-      "version": "1a5875"
+      "version": "9a722a"
     },
     {
       "name": "plg_system_guidedtours.guidedtours",
@@ -29,7 +29,7 @@
       "attributes": {
         "type": "module"
       },
-      "version": "56dbd1"
+      "version": "e4670d"
     }
   ]
 }

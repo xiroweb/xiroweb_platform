@@ -5,7 +5,7 @@
   <packagerurl>https://www.xiroweb.com</packagerurl>
   <name>pkg_xiroadmin</name>
   <description>Xiroadmin Administrator Template</description>
-  <version>5.0.2</version>
+  <version>5.1.1</version>
   <creationDate>2021-12-20</creationDate>
   	<author>Xiroweb</author>
 	<authorEmail>support@xiroweb.com</authorEmail>
@@ -13,7 +13,7 @@
 	<copyright>Copyright (c)2021-2021 Xiroweb All rights reserved.</copyright>
 	<license>GNU/GPLv2 www.gnu.org/licenses/gpl-2.0.html</license>
   <files>
-    <file type="template" client="administrator" id="xiroadmin"  enabled="1">tpl_xiroadmin_v5.0.2.zip</file>
+    <file type="template" client="administrator" id="xiroadmin"  enabled="1">tpl_xiroadmin_v5.1.1.zip</file>
     <file type="plugin" group="system" id="xiroadmin" enabled="1">plg_system_xiroadmin_v4.4.1.zip</file>  
   </files>
   <scriptfile>script.xiroadmin.php</scriptfile>

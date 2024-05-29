@@ -17,7 +17,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var \Joomla\CMS\Document\HtmlDocument $this */
 
 $app   = Factory::getApplication();
-$input = $app->input;
+$input = $app->getInput();
 $wa    = $this->getWebAssetManager();
 
 // Detecting Active Variables
@@ -26,8 +26,8 @@ $view         = $input->get('view', '');
 $layout       = $input->get('layout', 'default');
 $task         = $input->get('task', 'display');
 $cpanel       = $option === 'com_cpanel' || ($option === 'com_admin' && $view === 'help');
-$hiddenMenu   = $app->input->get('hidemainmenu');
-$sidebarState = $input->cookie->get('xiroadminSidebarState', '');
+$hiddenMenu   = $app->getInput()->get('hidemainmenu');
+$sidebarState = $input->cookie->get('atumSidebarState', '');
 
 // Getting user accessibility settings
 $a11y_mono      = (bool) $app->getIdentity()->getParam('a11y_mono', '');
@@ -42,11 +42,11 @@ $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], t
 
 // Template params
 $logoBrandLarge  = $this->params->get('logoBrandLarge')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
 $logoBrandSmall = $this->params->get('logoBrandSmall')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
 
 $logoBrandLargeAlt = empty($this->params->get('logoBrandLargeAlt')) && empty($this->params->get('emptyLogoBrandLargeAlt'))
 	? 'alt=""'
@@ -63,6 +63,19 @@ list($r, $g, $b) = sscanf($linkColor, "#%02x%02x%02x");
 
 $linkColorDark = $this->params->get('link-color-dark', '#7fa5d4');
 list($rd, $gd, $bd) = sscanf($linkColorDark, "#%02x%02x%02x");
+list($lighterRd, $lighterGd, $lighterBd) = adjustColorLightness($rd, $gd, $bd, 10);
+
+$linkColorDarkHvr = sprintf("%d, %d, %d", $lighterRd, $lighterGd, $lighterBd);
+
+function adjustColorLightness($r, $g, $b, $percent)
+{
+    $adjust = function ($color) use ($percent) {
+        $newColor = $color + ($color * $percent / 100);
+        return min(max(0, $newColor), 255);
+    };
+    return [$adjust($r), $adjust($g), $adjust($b)];
+}
+
 // Enable assets
 $wa->usePreset('template.xiroadmin.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
 	->useStyle('template.active.language')
@@ -97,7 +110,9 @@ if ($this->params->get('virtuemart-ui',1)) {
 // Set some meta data
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
-$monochrome = (bool) $this->params->get('monochrome');
+$monochrome    = (bool) $this->params->get('monochrome');
+$colorScheme   = $this->params->get('colorScheme', 'os');
+$themeModeAttr = '';
 
 $colordefaultbyxiroadmin = (bool) $this->params->get('colordefaultbyxiroadmin');
 if ($colordefaultbyxiroadmin) {

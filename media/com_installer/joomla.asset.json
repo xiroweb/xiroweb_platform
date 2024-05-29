@@ -23,13 +23,15 @@
       "attributes": {
         "type": "module"
       },
-      "version": "1d5d9b"
+      "deprecated": true,
+      "deprecatedMsg": "Use joomla.dialog asset for changelog popup",
+      "version": "cb1d9d"
     },
     {
       "name": "com_installer.installer",
       "type": "style",
       "uri": "com_installer/installer.min.css",
-      "version": "cb258d"
+      "version": "28212c"
     },
     {
       "name": "com_installer.installer",
@@ -41,7 +43,7 @@
       "attributes": {
         "type": "module"
       },
-      "version": "e44f0c"
+      "version": "3aacf0"
     }
   ]
 }

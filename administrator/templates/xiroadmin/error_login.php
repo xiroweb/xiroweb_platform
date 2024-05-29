@@ -16,7 +16,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var \Joomla\CMS\Document\ErrorDocument $this */
 
 $app   = Factory::getApplication();
-$input = $app->input;
+$input = $app->getInput();
 $wa    = $this->getWebAssetManager();
 
 // Detecting Active Variables
@@ -32,14 +32,14 @@ $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], t
 
 // Template params
 $logoBrandLarge  = $this->params->get('logoBrandLarge')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandLarge'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/logo.png';
 $loginLogo = $this->params->get('loginLogo')
-	? Uri::root() . $this->params->get('loginLogo')
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
+	? Uri::root(false) . $this->params->get('loginLogo')
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
 $logoBrandSmall = $this->params->get('logoBrandSmall')
-	? Uri::root() . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
-	: Uri::root() . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
+	? Uri::root(false) . htmlspecialchars($this->params->get('logoBrandSmall'), ENT_QUOTES)
+	: Uri::root(false) . 'media/templates/administrator/xiroadmin/images/logos/icon-xiroweb.png';
 
 $logoBrandLargeAlt = empty($this->params->get('logoBrandLargeAlt')) && empty($this->params->get('emptyLogoBrandLargeAlt'))
 	? 'alt=""'

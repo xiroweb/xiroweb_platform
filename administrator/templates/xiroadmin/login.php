@@ -16,7 +16,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var \Joomla\CMS\Document\HtmlDocument $this */
 
 $app   = Factory::getApplication();
-$input = $app->input;
+$input = $app->getInput();
 $wa    = $this->getWebAssetManager();
 
 // Detecting Active Variables
@@ -73,7 +73,23 @@ $wa->registerStyle('template.active', '', [], [], ['template.xiroadmin.' . ($thi
 // Set some meta data
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
-$monochrome = (bool) $this->params->get('monochrome');
+$monochrome    = (bool) $this->params->get('monochrome');
+$colorScheme   = $this->params->get('colorScheme', 'os');
+$themeModeAttr = '';
+
+if ($colorScheme) {
+    $themeModes   = ['os' => ' data-color-scheme-os', 'light' => ' data-bs-theme="light" data-color-scheme="light"', 'dark' => ' data-bs-theme="dark" data-color-scheme="dark"'];
+    // Check for User choose, for now this have a priority over the parameters
+    $userColorScheme = $app->getInput()->cookie->get('userColorScheme', '');
+    if ($userColorScheme && !empty($themeModes[$userColorScheme])) {
+        $themeModeAttr = $themeModes[$userColorScheme];
+    } else {
+        // Check parameters first (User and Template), then look if we have detected the OS color scheme (if it set to 'os')
+        $colorScheme   = $app->getIdentity()->getParam('colorScheme', $colorScheme);
+        $osColorScheme = $colorScheme === 'os' ? $app->getInput()->cookie->get('osColorScheme', '') : '';
+        $themeModeAttr = ($themeModes[$colorScheme] ?? '') . ($themeModes[$osColorScheme] ?? '');
+    }
+}
 
 // Add cookie alert message
 Text::script('JGLOBAL_WARNCOOKIES');
@@ -94,15 +110,11 @@ HTMLHelper::_('bootstrap.dropdown');
 
 <body class="admin <?php echo $option . ' view-' . $view . ' layout-' . $layout . ($task ? ' task-' . $task : '') . ($monochrome ? ' monochrome' : ''); ?>">
 
-	<noscript>
-		<div class="alert alert-danger" role="alert">
-			<?php echo Text::_('JGLOBAL_WARNJAVASCRIPT'); ?>
-		</div>
-	</noscript>
-	<div class="ie11 alert alert-warning" role="alert">
-		<?php echo Text::_('JGLOBAL_WARNIE'); ?>
-	</div>
-
+    <noscript>
+        <div class="alert alert-danger" role="alert">
+            <?php echo Text::_('JGLOBAL_WARNJAVASCRIPT'); ?>
+        </div>
+    </noscript>
 
 	<div id="wrapper" class="wrapper">
 		<div class="container-fluid container-main">

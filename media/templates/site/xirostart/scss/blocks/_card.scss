@@ -1,0 +1,19 @@
+.xiro-card {
+    box-shadow: $xirovar-box-shadow-2;
+    background: #e7e7e7;
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 20px;
+  
+    &:hover {
+      box-shadow: $xirovar-box-shadow-3;
+      @include xirovar-transition;
+    }
+  }
+
+.sidebar-right.card {
+    margin-bottom: 1.5rem;
+}
+.bottom-b.card {
+    height: 100%;
+}

@@ -1,0 +1,42 @@
+
+.xiro-shadow{
+      box-shadow: $xirovar-box-shadow;
+    &-1 {
+      box-shadow: $xirovar-box-shadow-1;
+    }
+    &-2 {
+      box-shadow: $xirovar-box-shadow-2;
+    }
+    &-3 {
+      box-shadow: $xirovar-box-shadow-3;
+    }
+    &-hover {
+      &:hover {
+        box-shadow: $xirovar-box-shadow;
+      }
+    }
+    &-hover-1 {
+      &:hover {
+        box-shadow: $xirovar-box-shadow-1;
+      }
+    }
+    &-hover-2 {
+      &:hover {
+        box-shadow: $xirovar-box-shadow-2;
+      }
+    }
+    &-hover-3 {
+      &:hover {
+        box-shadow: $xirovar-box-shadow-3;
+      }
+    }
+    &-hover-4 {
+      &:hover {
+        box-shadow: $xirovar-box-shadow-4;
+      }
+    }
+  }
+
+
+
+

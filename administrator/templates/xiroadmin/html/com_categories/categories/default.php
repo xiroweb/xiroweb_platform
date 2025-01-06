@@ -19,12 +19,14 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
 use Joomla\String\Inflector;
 
+/** @var \Joomla\Component\Categories\Administrator\View\Categories\HtmlView $this */
+
 /** @var \Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->document->getWebAssetManager();
 $wa->useScript('table.columns')
     ->useScript('multiselect');
 
-$user      = Factory::getUser();
+$user      = $this->getCurrentUser();
 $userId    = $user->get('id');
 $extension = $this->escape($this->state->get('filter.extension'));
 $listOrder = $this->escape($this->state->get('list.ordering'));
@@ -58,7 +60,7 @@ if ($saveOrder && !empty($this->items))
 			<div id="j-main-container" class="j-main-container">
 				<?php
 				// Search tools bar
-				echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this));
+				echo LayoutHelper::render('joomla.searchtools.default', ['view' => $this]);
 				?>
 				<?php if (empty($this->items)) : ?>
 					<div class="alert alert-info">
@@ -292,21 +294,17 @@ if ($saveOrder && !empty($this->items))
 					<?php // load the pagination. ?>
 					<?php echo $this->pagination->getListFooter(); ?>
 
-					<?php // Load the batch processing form. ?>
-					<?php if ($user->authorise('core.create', $extension)
-						&& $user->authorise('core.edit', $extension)
-						&& $user->authorise('core.edit.state', $extension)) : ?>
-						<?php echo HTMLHelper::_(
-							'bootstrap.renderModal',
-							'collapseModal',
-							array(
-								'title'  => Text::_('COM_CATEGORIES_BATCH_OPTIONS'),
-								'footer' => $this->loadTemplate('batch_footer'),
-							),
-							$this->loadTemplate('batch_body')
-						); ?>
-					<?php endif; ?>
-				<?php endif; ?>
+                    <?php // Load the batch processing form.
+                    ?>
+                    <?php
+                    if (
+                        $user->authorise('core.create', $extension)
+                        && $user->authorise('core.edit', $extension)
+                        && $user->authorise('core.edit.state', $extension)
+                    ) : ?>
+                        <template id="joomla-dialog-batch"><?php echo $this->loadTemplate('batch_body'); ?></template>
+                    <?php endif; ?>
+                <?php endif; ?>
 
 				<input type="hidden" name="extension" value="<?php echo $extension; ?>">
 				<input type="hidden" name="task" value="">

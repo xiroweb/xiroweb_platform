@@ -1,149 +1,195 @@
-function _extends() {
-  _extends = Object.assign ? Object.assign.bind() : function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
+(function () {
+  'use strict';
+
+  function _extends() {
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+      }
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap util/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+  // js-docs-end allow-list
+
+  const uriAttributes = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
+
+  /**
+   * A pattern that recognizes URLs that are safe wrt. XSS in URL navigation
+   * contexts.
+   *
+   * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
+   */
+  // eslint-disable-next-line unicorn/better-regex
+  const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
+  const allowedAttribute = (attribute, allowedAttributeList) => {
+    const attributeName = attribute.nodeName.toLowerCase();
+    if (allowedAttributeList.includes(attributeName)) {
+      if (uriAttributes.has(attributeName)) {
+        return Boolean(SAFE_URL_PATTERN.test(attribute.nodeValue));
+      }
+      return true;
+    }
+
+    // Check if a regular expression validates the attribute.
+    return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp).some(regex => regex.test(attributeName));
+  };
+  function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
+    if (!unsafeHtml.length) {
+      return unsafeHtml;
+    }
+    if (sanitizeFunction && typeof sanitizeFunction === 'function') {
+      return sanitizeFunction(unsafeHtml);
+    }
+    const domParser = new window.DOMParser();
+    const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
+    const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
+    for (const element of elements) {
+      const elementName = element.nodeName.toLowerCase();
+      if (!Object.keys(allowList).includes(elementName)) {
+        element.remove();
+        continue;
+      }
+      const attributeList = [].concat(...element.attributes);
+      const allowedAttributes = [].concat(allowList['*'] || [], allowList[elementName] || []);
+      for (const attribute of attributeList) {
+        if (!allowedAttribute(attribute, allowedAttributes)) {
+          element.removeAttribute(attribute.nodeName);
         }
       }
     }
-    return target;
-  };
-  return _extends.apply(this, arguments);
-}
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/sanitizer.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-// js-docs-end allow-list
-
-const uriAttributes = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
-
-/**
- * A pattern that recognizes URLs that are safe wrt. XSS in URL navigation
- * contexts.
- *
- * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
- */
-// eslint-disable-next-line unicorn/better-regex
-const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
-const allowedAttribute = (attribute, allowedAttributeList) => {
-  const attributeName = attribute.nodeName.toLowerCase();
-  if (allowedAttributeList.includes(attributeName)) {
-    if (uriAttributes.has(attributeName)) {
-      return Boolean(SAFE_URL_PATTERN.test(attribute.nodeValue));
-    }
-    return true;
+    return createdDocument.body.innerHTML;
   }
 
-  // Check if a regular expression validates the attribute.
-  return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp).some(regex => regex.test(attributeName));
-};
-function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
-  if (!unsafeHtml.length) {
-    return unsafeHtml;
-  }
-  if (sanitizeFunction && typeof sanitizeFunction === 'function') {
-    return sanitizeFunction(unsafeHtml);
-  }
-  const domParser = new window.DOMParser();
-  const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
-  const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
-  for (const element of elements) {
-    const elementName = element.nodeName.toLowerCase();
-    if (!Object.keys(allowList).includes(elementName)) {
-      element.remove();
-      continue;
-    }
-    const attributeList = [].concat(...element.attributes);
-    const allowedAttributes = [].concat(allowList['*'] || [], allowList[elementName] || []);
-    for (const attribute of attributeList) {
-      if (!allowedAttribute(attribute, allowedAttributes)) {
-        element.removeAttribute(attribute.nodeName);
-      }
-    }
-  }
-  return createdDocument.body.innerHTML;
-}
-
-const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
-const DATA_ATTRIBUTE_PATTERN = /^data-[\w-]*$/i;
-const DefaultAllowlist = {
-  // Global attributes allowed on any supplied element below.
-  '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN, DATA_ATTRIBUTE_PATTERN],
-  a: ['target', 'href', 'title', 'rel'],
-  area: [],
-  b: [],
-  br: [],
-  col: [],
-  code: [],
-  div: [],
-  em: [],
-  hr: [],
-  h1: [],
-  h2: [],
-  h3: [],
-  h4: [],
-  h5: [],
-  h6: [],
-  i: [],
-  img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
-  li: [],
-  ol: [],
-  p: [],
-  pre: [],
-  s: [],
-  small: [],
-  span: [],
-  sub: [],
-  sup: [],
-  strong: [],
-  u: [],
-  ul: [],
-  button: ['type'],
-  input: ['accept', 'alt', 'autocomplete', 'autofocus', 'capture', 'checked', 'dirname', 'disabled', 'height', 'list', 'max', 'maxlength', 'min', 'minlength', 'multiple', 'type', 'name', 'pattern', 'placeholder', 'readonly', 'required', 'size', 'src', 'step', 'value', 'width', 'inputmode'],
-  select: ['name'],
-  textarea: ['name'],
-  option: ['value', 'selected']
-};
-
-// Only define the Joomla namespace if not defined.
-window.Joomla = window.Joomla || {};
-window.Joomla.Modal = window.Joomla.Modal || {
   /**
-   * *****************************************************************
-   * Modals should implement
-   * *****************************************************************
-   *
-   * getCurrent  Type  Function  Should return the modal element
-   * setCurrent  Type  Function  Should set the modal element
-   * current     Type  {node}    The modal element
-   *
-   * USAGE (assuming that exampleId is the modal id)
-   * To get the current modal element:
-   *   Joomla.Modal.getCurrent(); // Returns node element, eg: document.getElementById('exampleId')
-   * To set the current modal element:
-   *   Joomla.Modal.setCurrent(document.getElementById('exampleId'));
-   *
-   * *************************************************************
-   * Joomla's UI modal uses `element.close();` to close the modal
-   * and `element.open();` to open the modal
-   * If you are using another modal make sure the same
-   * functionality is bound to the modal element
-   * @see media/legacy/bootstrap.init.js
-   * *************************************************************
+   * @copyright  (C) 2018 Open Source Matters, Inc. <https://www.joomla.org>
+   * @license    GNU General Public License version 2 or later; see LICENSE.txt
    */
-  current: '',
-  setCurrent: element => {
-    window.Joomla.Modal.current = element;
-  },
-  getCurrent: () => window.Joomla.Modal.current
-};
-(Joomla => {
+  const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
+  const DATA_ATTRIBUTE_PATTERN = /^data-[\w-]*$/i;
+  const DefaultAllowlist = {
+    // Global attributes allowed on any supplied element below.
+    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN, DATA_ATTRIBUTE_PATTERN],
+    a: ['target', 'href', 'title', 'rel'],
+    area: [],
+    b: [],
+    br: [],
+    col: [],
+    code: [],
+    div: [],
+    em: [],
+    hr: [],
+    h1: [],
+    h2: [],
+    h3: [],
+    h4: [],
+    h5: [],
+    h6: [],
+    i: [],
+    img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
+    li: [],
+    ol: [],
+    p: [],
+    pre: [],
+    s: [],
+    small: [],
+    span: [],
+    sub: [],
+    sup: [],
+    strong: [],
+    u: [],
+    ul: [],
+    button: ['type'],
+    input: ['accept', 'alt', 'autocomplete', 'autofocus', 'capture', 'checked', 'dirname', 'disabled', 'height', 'list', 'max', 'maxlength', 'min', 'minlength', 'multiple', 'type', 'name', 'pattern', 'placeholder', 'readonly', 'required', 'size', 'src', 'step', 'value', 'width', 'inputmode'],
+    select: ['name'],
+    textarea: ['name'],
+    option: ['value', 'selected']
+  };
+
+  // Only define the Joomla namespace if not defined.
+  window.Joomla = window.Joomla || {};
+
+  // Only define editors if not defined
+  Joomla.editors = Joomla.editors || {};
+
+  // An object to hold each editor instance on page, only define if not defined.
+  Joomla.editors.instances = Joomla.editors.instances || {
+    /**
+     * *****************************************************************
+     * All Editors MUST register, per instance, the following callbacks:
+     * *****************************************************************
+     *
+     * getValue         Type  Function  Should return the complete data from the editor
+     *                                  Example: () => { return this.element.value; }
+     * setValue         Type  Function  Should replace the complete data of the editor
+     *                                  Example: (text) => { return this.element.value = text; }
+     * getSelection     Type  Function  Should return the selected text from the editor
+     *                                  Example: function () { return this.selectedText; }
+     * disable          Type  Function  Toggles the editor into disabled mode. When the editor is
+     *                                  active then everything should be usable. When inactive the
+     *                                  editor should be unusable AND disabled for form validation
+     *                                  Example: (bool) => { return this.disable = value; }
+     * replaceSelection Type  Function  Should replace the selected text of the editor
+     *                                  If nothing selected, will insert the data at the cursor
+     *                                  Example:
+     *                                  (text) => {
+     *                                    return insertAtCursor(this.element, text);
+     *                                    }
+     *
+     * USAGE (assuming that jform_articletext is the textarea id)
+     * {
+     * To get the current editor value:
+     *  Joomla.editors.instances['jform_articletext'].getValue();
+     * To set the current editor value:
+     *  Joomla.editors.instances['jform_articletext'].setValue('Joomla! rocks');
+     * To replace(selection) or insert a value at  the current editor cursor (replaces the J3
+     * jInsertEditorText API):
+     *  replaceSelection:
+     *  Joomla.editors.instances['jform_articletext'].replaceSelection('Joomla! rocks')
+     * }
+     *
+     * *********************************************************
+     * ANY INTERACTION WITH THE EDITORS SHOULD USE THE ABOVE API
+     * *********************************************************
+     */
+  };
+  Joomla.Modal = Joomla.Modal || {
+    /**
+     * *****************************************************************
+     * Modals should implement
+     * *****************************************************************
+     *
+     * getCurrent  Type  Function  Should return the modal element
+     * setCurrent  Type  Function  Should set the modal element
+     * current     Type  {node}    The modal element
+     *
+     * USAGE (assuming that exampleId is the modal id)
+     * To get the current modal element:
+     *   Joomla.Modal.getCurrent(); // Returns node element, eg: document.getElementById('exampleId')
+     * To set the current modal element:
+     *   Joomla.Modal.setCurrent(document.getElementById('exampleId'));
+     *
+     * *************************************************************
+     * Joomla's UI modal uses `element.close();` to close the modal
+     * and `element.open();` to open the modal
+     * If you are using another modal make sure the same
+     * functionality is bound to the modal element
+     * @see media/legacy/bootstrap.init.js
+     * *************************************************************
+     */
+    current: '',
+    setCurrent: element => {
+      Joomla.Modal.current = element;
+    },
+    getCurrent: () => Joomla.Modal.current
+  };
 
   /**
    * Method to Extend Objects
@@ -163,7 +209,7 @@ window.Joomla.Modal = window.Joomla.Modal || {
     if (destination === null) {
       newDestination = {};
     }
-    [].slice.call(Object.keys(source)).forEach(key => {
+    Object.keys(source).forEach(key => {
       newDestination[key] = source[key];
     });
     return destination;
@@ -207,9 +253,8 @@ window.Joomla.Modal = window.Joomla.Modal || {
   Joomla.loadOptions = options => {
     // Load form the script container
     if (!options) {
-      const elements = [].slice.call(document.querySelectorAll('.joomla-script-options.new'));
       let counter = 0;
-      elements.forEach(element => {
+      document.querySelectorAll('.joomla-script-options.new').forEach(element => {
         const str = element.text || element.textContent;
         const option = JSON.parse(str);
         if (option) {
@@ -228,7 +273,7 @@ window.Joomla.Modal = window.Joomla.Modal || {
       Joomla.optionsStorage = options || {};
     } else if (options) {
       // Merge with existing
-      [].slice.call(Object.keys(options)).forEach(key => {
+      Object.keys(options).forEach(key => {
         /**
          * If both existing and new options are objects, merge them with Joomla.extend().
          * But test for new option being null, as null is an object, but we want to allow
@@ -287,7 +332,7 @@ window.Joomla.Modal = window.Joomla.Modal || {
      * @returns {Joomla.Text}
      */
     load: object => {
-      [].slice.call(Object.keys(object)).forEach(key => {
+      Object.keys(object).forEach(key => {
         Joomla.Text.strings[key.toUpperCase()] = object[key];
       });
       return Joomla.Text;
@@ -531,9 +576,8 @@ window.Joomla.Modal = window.Joomla.Modal || {
     if (!/^[0-9A-F]{32}$/i.test(newToken)) {
       return;
     }
-    const elements = [].slice.call(document.getElementsByTagName('input'));
-    elements.forEach(element => {
-      if (element.type === 'hidden' && element.value === '1' && element.name.length === 32) {
+    document.querySelectorAll('input[type="hidden"]').forEach(element => {
+      if (element.value === '1' && element.name.length === 32) {
         element.name = newToken;
       }
     });
@@ -605,7 +649,7 @@ window.Joomla.Modal = window.Joomla.Modal || {
 
       // Custom headers
       if (newOptions.headers) {
-        [].slice.call(Object.keys(newOptions.headers)).forEach(key => {
+        Object.keys(newOptions.headers).forEach(key => {
           // Allow request without Content-Type
           // eslint-disable-next-line no-empty
           if (key === 'Content-Type' && newOptions.headers['Content-Type'] === 'false') ; else {
@@ -745,4 +789,5 @@ window.Joomla.Modal = window.Joomla.Modal || {
     }
     return msg;
   };
-})(Joomla);
+
+})();

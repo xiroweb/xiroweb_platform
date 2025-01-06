@@ -159,10 +159,6 @@ class File
             $file     = Path::clean($file);
             $filename = basename($file);
 
-            if (!Path::canChmod($file)) {
-                throw new FilesystemException(__METHOD__ . ': Failed deleting inaccessible file ' . $filename);
-            }
-
             // Try making the file writable first. If it's read-only, it can't be deleted
             // on Windows, even if the parent folder is writable
             @chmod($file, 0777);
@@ -239,8 +235,7 @@ class File
      */
     public static function write($file, $buffer, $useStreams = false, $appendToFile = false)
     {
-        if (\function_exists('set_time_limit'))
-        {
+        if (\function_exists('set_time_limit')) {
             set_time_limit(ini_get('max_execution_time'));
         }
 

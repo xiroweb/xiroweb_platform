@@ -24,7 +24,7 @@ caption {
     padding: .5rem;
     background: var(--form-content-bg);
 
-    .btn {
+    .btn:not(.group-move-up):not(.group-move-down):not(.group-move) {
       padding: $xiroadmin-input-padding;
     }
   }

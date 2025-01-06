@@ -1,0 +1,31 @@
+// Frontend Editing
+
+.btn.jmodedit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  z-index: 900;
+  color: var(--link-color);
+  background-color: rgba(255,255,255,.5);
+  border: 0px solid #58595a;
+  --btn-padding-y: 0.25rem;
+  --btn-padding-x: 0.5rem;
+  --btn-font-size: 0.875rem;
+  --btn-border-radius: 0.2rem;
+}
+
+.jmodedit {
+    &:hover {
+        @include xiromixin-boxshadow-1;
+    }
+}
+
+// work with jmodedit (position:absolute)
+.moduletable, .mod-breadcrumbs__wrapper, .block-search, .top-a, .top-b, .bottom-a, .bottom-b, footer {
+    position: relative;
+}
+
+#modules-form input#jform_title {
+    margin-bottom: 2.7rem;
+}

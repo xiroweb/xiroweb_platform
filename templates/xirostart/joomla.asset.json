@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "xirostart",
+  "version": "4.0.0",
+  "description": "This file contains details of the assets used by Xirostart Template",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.xirostart.ltr",
+      "description": "The css file to be used when the site is left to right (LTR).",
+      "type": "style",
+      "uri": "template.min.css",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.xirostart.rtl",
+      "description": "The css file to be used when the site is right to left (RTL).",
+      "type": "style",
+      "uri": "template-rtl.min.css",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.offline",
+      "description": "The css file to be used when the site is offline and offline.php is being used.",
+      "type": "style",
+      "uri": "offline.css"
+    },
+    {
+      "name": "template.active.language",
+      "description": "An asset to allow language specific css, eg 'language/[lang-CODE]/[lang-CODE].css', to use it as a dependency to the active template",
+      "type": "style",
+      "uri": "",
+      "class": "LangActiveAssetItem",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.user",
+      "description": "A file where a user can add their own css.",
+      "type": "style",
+      "uri": "user.css",
+      "weight": 500,
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.custom",
+      "description": "A file where a user can add their own css.",
+      "type": "style",
+      "uri": "custom.css",
+      "weight": 501,
+      "dependencies": [
+        "template.active",
+        "template.active.language"
+      ]
+    },
+    {
+      "name": "template.xirostart",
+      "description": "The file containing the javascript for this template.",
+      "type": "script",
+      "uri": "template.js",
+      "attributes" : {
+        "defer": true
+      },
+      "dependencies": [
+        "core"
+      ]
+    },
+    {
+      "name": "template.active",
+      "description": "A dummy asset to allow extensions to use it as a dependency to the active template.",
+      "type": "script",
+      "uri": "",
+      "dependencies": [
+        "template.xirostart"
+      ]
+    },
+    {
+      "name": "template.user",
+      "description": "The name of a file where a user can add their own javascript",
+      "type": "script",
+      "uri":  "user.js",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.custom",
+      "description": "The name of a file where a user can add their own javascript",
+      "type": "script",
+      "uri":  "custom.js",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.xirostart.ltr",
+      "type": "preset",
+      "dependencies": [
+        "template.xirostart.ltr#style",
+        "template.xirostart#script"
+      ]
+    },
+    {
+      "name": "template.xirostart.rtl",
+      "type": "preset",
+      "dependencies": [
+        "template.xirostart.rtl#style",
+        "template.xirostart#script"
+      ]
+    },
+    {
+      "name": "searchtools",
+      "type": "style",
+      "uri": "system/searchtools/searchtools.min.css"
+    },
+    {
+      "name": "fontawesome",
+      "type": "style",
+      "uri": "system/joomla-fontawesome.min.css"
+    }
+  ]
+}

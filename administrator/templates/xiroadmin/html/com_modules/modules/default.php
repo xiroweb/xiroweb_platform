@@ -25,8 +25,8 @@ use Joomla\CMS\Uri\Uri;
 
 /** @var \Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->document->getWebAssetManager();
-$wa->useScript('table.columns')
-    ->useScript('multiselect');
+// $wa->useScript('table.columns');
+$wa->useScript('multiselect');
 
 $app = Factory::getApplication();
 $input = $app->input;

@@ -77,13 +77,13 @@ INSERT INTO `#__assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `titl
 (55, 18, 94, 95, 2, 'com_modules.module.87', 'Sample Data', '{}'),
 (56, 8, 20, 37, 2, 'com_content.workflow.1', 'COM_WORKFLOW_BASIC_WORKFLOW', '{}'),
 (57, 56, 21, 22, 3, 'com_content.stage.1', 'COM_WORKFLOW_BASIC_STAGE', '{}'),
-(58, 56, 23, 24, 3, 'com_content.transition.1', 'Unpublish', '{}'),
-(59, 56, 25, 26, 3, 'com_content.transition.2', 'Publish', '{}'),
-(60, 56, 27, 28, 3, 'com_content.transition.3', 'Trash', '{}'),
-(61, 56, 29, 30, 3, 'com_content.transition.4', 'Archive', '{}'),
-(62, 56, 31, 32, 3, 'com_content.transition.5', 'Feature', '{}'),
-(63, 56, 33, 34, 3, 'com_content.transition.6', 'Unfeature', '{}'),
-(64, 56, 35, 36, 3, 'com_content.transition.7', 'Publish & Feature', '{}'),
+(58, 56, 23, 24, 3, 'com_content.transition.1', 'UNPUBLISH', '{}'),
+(59, 56, 25, 26, 3, 'com_content.transition.2', 'PUBLISH', '{}'),
+(60, 56, 27, 28, 3, 'com_content.transition.3', 'TRASH', '{}'),
+(61, 56, 29, 30, 3, 'com_content.transition.4', 'ARCHIVE', '{}'),
+(62, 56, 31, 32, 3, 'com_content.transition.5', 'FEATURE', '{}'),
+(63, 56, 33, 34, 3, 'com_content.transition.6', 'UNFEATURE', '{}'),
+(64, 56, 35, 36, 3, 'com_content.transition.7', 'PUBLISH_AND_FEATURE', '{}'),
 (65, 1, 141, 142, 1, 'com_privacy', 'com_privacy', '{}'),
 (66, 1, 143, 144, 1, 'com_actionlogs', 'com_actionlogs', '{}'),
 (67, 18, 74, 75, 2, 'com_modules.module.88', 'Latest Actions', '{}'),
@@ -181,7 +181,7 @@ INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, 
 (0, 'com_newsfeeds', 'component', 'com_newsfeeds', '', 1, 1, 1, 0, 1, '', '{"newsfeed_layout":"_:default","save_history":"1","history_limit":5,"show_feed_image":"1","show_feed_description":"1","show_item_description":"1","feed_character_count":"0","feed_display_order":"des","float_first":"right","float_second":"right","show_tags":"1","category_layout":"_:default","show_category_title":"1","show_description":"1","show_description_image":"1","maxLevel":"-1","show_empty_categories":"0","show_subcat_desc":"1","show_cat_items":"1","show_cat_tags":"1","show_base_description":"1","maxLevelcat":"-1","show_empty_categories_cat":"0","show_subcat_desc_cat":"1","show_cat_items_cat":"1","filter_field":"1","show_pagination_limit":"1","show_headings":"1","show_articles":"0","show_link":"1","show_pagination":"1","show_pagination_results":"1","sef_ids":1}', ''),
 (0, 'com_plugins', 'component', 'com_plugins', '', 1, 1, 1, 1, 1, '', '', ''),
 (0, 'com_templates', 'component', 'com_templates', '', 1, 1, 1, 1, 1, '', '{"template_positions_display":"1","upload_limit":"10","image_formats":"gif,bmp,jpg,jpeg,png,webp","source_formats":"txt,less,ini,xml,js,php,css,scss,sass,json","font_formats":"woff,woff2,ttf,otf","compressed_formats":"zip","difference":"SideBySide"}', ''),
-(0, 'com_content', 'component', 'com_content', '', 1, 1, 0, 1, 1, '', '{"article_layout":"_:default","show_title":"1","link_titles":"1","show_intro":"1","info_block_position":"0","info_block_show_title":"0","show_category":"0","link_category":"1","show_parent_category":"0","link_parent_category":"0","show_associations":"0","flags":"1","show_author":"1","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"1","show_item_navigation":"1","show_readmore":"1","show_readmore_title":"0","readmore_limit":100,"show_tags":"1","record_hits":"1","show_hits":"1","show_noauth":"0","urls_position":0,"captcha":"","show_publishing_options":"1","show_article_options":"1","show_configure_edit_options":"1","show_permissions":"1","show_associations_edit":"1","save_history":"1","history_limit":10,"show_urls_images_frontend":"1","show_urls_images_backend":"0","targeta":0,"targetb":0,"targetc":0,"float_intro":"","float_fulltext":"","category_layout":"_:blog","show_category_title":"1","show_description":"0","show_description_image":"0","maxLevel":"0","show_empty_categories":"0","show_no_articles":"0","show_category_heading_title_text":"1","show_subcat_desc":"1","show_cat_num_articles":"0","show_cat_tags":"1","show_base_description":"1","maxLevelcat":"0","show_empty_categories_cat":"0","show_subcat_desc_cat":"1","show_cat_num_articles_cat":"0","num_leading_articles":0,"blog_class_leading":"","num_intro_articles":12,"blog_class":"","num_columns":3,"multi_column_order":"1","num_links":0,"show_subcategory_content":"0","link_intro_image":"1","show_pagination_limit":"1","filter_field":"hide","show_headings":"1","list_show_date":"0","date_format":"","list_show_hits":"1","list_show_author":"1","orderby_pri":"order","orderby_sec":"rdate","order_date":"published","show_pagination":"2","show_pagination_results":"1","show_featured":"show","show_feed_link":"1","feed_summary":"0","feed_show_readmore":"0","sef_ids":1,"custom_fields_enable":"1","workflow_enabled":"0"}', ''),
+(0, 'com_content', 'component', 'com_content', '', 1, 1, 0, 1, 1, '', '{"article_layout":"_:default","show_title":"1","link_titles":"1","show_intro":"1","info_block_position":"0","info_block_show_title":"0","show_category":"0","link_category":"1","show_parent_category":"0","link_parent_category":"0","show_associations":"0","flags":"1","show_author":"1","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"1","show_item_navigation":"1","show_readmore":"1","show_readmore_title":"0","readmore_limit":100,"show_tags":"1","record_hits":"1","show_hits":"1","show_noauth":"0","urls_position":0,"captcha":"","show_publishing_options":"1","show_article_options":"1","show_configure_edit_options":"1","show_permissions":"1","show_associations_edit":"1","save_history":"1","history_limit":10,"show_urls_images_frontend":"1","show_urls_images_backend":"1","targeta":0,"targetb":0,"targetc":0,"float_intro":"","float_fulltext":"","category_layout":"_:blog","show_category_title":"1","show_description":"0","show_description_image":"0","maxLevel":"0","show_empty_categories":"0","show_no_articles":"0","show_category_heading_title_text":"1","show_subcat_desc":"1","show_cat_num_articles":"0","show_cat_tags":"1","show_base_description":"1","maxLevelcat":"0","show_empty_categories_cat":"0","show_subcat_desc_cat":"1","show_cat_num_articles_cat":"0","num_leading_articles":0,"blog_class_leading":"","num_intro_articles":12,"blog_class":"","num_columns":3,"multi_column_order":"1","num_links":0,"show_subcategory_content":"0","link_intro_image":"1","show_pagination_limit":"1","filter_field":"hide","show_headings":"1","list_show_date":"0","date_format":"","list_show_hits":"1","list_show_author":"1","orderby_pri":"order","orderby_sec":"rdate","order_date":"published","show_pagination":"2","show_pagination_results":"1","show_featured":"show","show_feed_link":"1","feed_summary":"0","feed_show_readmore":"0","sef_ids":1,"custom_fields_enable":"1","workflow_enabled":"0"}', ''),
 (0, 'com_config', 'component', 'com_config', '', 1, 1, 0, 1, 1, '', '{"filters":{"1":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"9":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"6":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"7":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"2":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"3":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"4":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"5":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"8":{"filter_type":"NONE","filter_tags":"","filter_attributes":""}}}', ''),
 (0, 'com_redirect', 'component', 'com_redirect', '', 1, 1, 0, 0, 1, '', '', ''),
 (0, 'com_users', 'component', 'com_users', '', 1, 1, 0, 1, 1, '', '{"allowUserRegistration":"0","new_usertype":"2","guest_usergroup":"9","sendpassword":"0","useractivation":"2","mail_to_admin":"1","captcha":"","frontend_userparams":"1","site_language":"0","change_login_name":"0","reset_count":"10","reset_time":"1","minimum_length":"12","minimum_integers":"0","minimum_symbols":"0","minimum_uppercase":"0","save_history":"1","history_limit":5,"mailSubjectPrefix":"","mailBodySuffix":""}', ''),
@@ -194,7 +194,7 @@ INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, 
 (0, 'com_fields', 'component', 'com_fields', '', 1, 1, 1, 0, 1, '', '', ''),
 (0, 'com_associations', 'component', 'com_associations', '', 1, 1, 1, 0, 1, '', '', ''),
 (0, 'com_privacy', 'component', 'com_privacy', '', 1, 1, 1, 0, 1, '', '', ''),
-(0, 'com_actionlogs', 'component', 'com_actionlogs', '', 1, 1, 1, 0, 1, '', '{"ip_logging":0,"csv_delimiter":",","loggable_extensions":["com_banners","com_cache","com_categories","com_checkin","com_config","com_contact","com_content","com_fields","com_installer","com_media","com_menus","com_messages","com_modules","com_newsfeeds","com_plugins","com_redirect","com_scheduler","com_tags","com_templates","com_users"]}', ''),
+(0, 'com_actionlogs', 'component', 'com_actionlogs', '', 1, 1, 1, 0, 1, '', '{"ip_logging":0,"csv_delimiter":",","loggable_extensions":["com_banners","com_cache","com_categories","com_checkin","com_config","com_contact","com_content","com_fields","com_guidedtours","com_installer","com_media","com_menus","com_messages","com_modules","com_newsfeeds","com_plugins","com_redirect","com_scheduler","com_tags","com_templates","com_users"]}', ''),
 (0, 'com_workflow', 'component', 'com_workflow', '', 1, 1, 0, 1, 1, '', '{}', ''),
 (0, 'com_mails', 'component', 'com_mails', '', 1, 1, 1, 1, 1, '', '', ''),
 (0, 'com_scheduler', 'component', 'com_scheduler', '', 1, 1, 1, 0, 1, '', '{}', ''),
@@ -365,7 +365,7 @@ INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, 
 (0, 'plg_system_remember', 'plugin', 'remember', 'system', 0, 1, 1, 0, 1, '', '', '', 16, 0),
 (0, 'plg_system_schedulerunner', 'plugin', 'schedulerunner', 'system', 0, 1, 1, 0, 1, '', '{}', '', 17, 0),
 (0, 'plg_system_schemaorg', 'plugin', 'schemaorg', 'system', 0, 1, 1, 0, 0, '', '{}', '', 18, 0),
-(0, 'plg_system_sef', 'plugin', 'sef', 'system', 0, 1, 1, 0, 1, '', '', '', 19, 0),
+(0, 'plg_system_sef', 'plugin', 'sef', 'system', 0, 1, 1, 0, 1, '', '{"domain":"","indexphp":"1","trailingslash":"0","enforcesuffix":"1","strictrouting":"1"}', '', 19, 0),
 (0, 'plg_system_shortcut', 'plugin', 'shortcut', 'system', 0, 1, 1, 0, 1, '', '{}', '', 21, 0),
 (0, 'plg_system_skipto', 'plugin', 'skipto', 'system', 0, 1, 1, 0, 1, '', '{}', '', 22, 0),
 (0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 0, 1, 0, 1, '', '', '', 23, 0),
@@ -415,7 +415,8 @@ INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, 
 -- Templates
 INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `ordering`, `state`) VALUES
 (0, 'atum', 'template', 'atum', '', 1, 1, 1, 0, 1, '', '', '', 0, 0),
-(0, 'cassiopeia', 'template', 'cassiopeia', '', 0, 1, 1, 0, 1, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","colorName":"colors_standard","fluidContainer":"0","stickyHeader":0,"backTop":0}', '', 0, 0);
+(0, 'cassiopeia', 'template', 'cassiopeia', '', 0, 1, 1, 0, 1, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","colorName":"colors_standard","fluidContainer":"0","stickyHeader":0,"backTop":0}', '', 0, 0),
+(0, 'xirostart', 'template', 'xirostart', '', 0, 1, 1, 0, 0, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","systemFontBody":"","systemFontHeading":"","fluidContainer":"0","stickyHeader":"0","backTop":"0","hideModuleWhenEditmodule":"1","hideModuleWhenEditLayout":"0","hideGeneratorMeta":"1","frontendEditModuleUi":"1","body_color_onoff":"0","body_color_box":"#22262a","link_color_onoff":"0","link_color_box":"#224faa","link_color_hover_onoff":"0","link_color_hover_box":"#424077","primary_onoff":"0","primary_box":"#010156"}', '', 0, 0);
 
 -- Files Extensions
 INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `ordering`, `state`) VALUES
@@ -434,7 +435,7 @@ SELECT `extension_id`, 'English (en-GB)', 'language', 'en-GB', '', 3, 1, 1, 1, 1
 
 -- Packages
 INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `ordering`, `state`) VALUES
-(0, 'pkg_xiroadmin', 'package', 'pkg_xiroadmin', '', 0, 1, 1, 0, 0, '{"name":"pkg_xiroadmin","type":"package","creationDate":"2021-12-03","author":"Xiroweb","copyright":"Copyright (c)2021-2021 Xiroweb All rights reserved.","authorEmail":"support@xiroweb.com","authorUrl":"https:\\/\\/www.xiroweb.com","version":"5.0.2","description":"Xiroadmin Administrator Template","group":"","filename":"pkg_xiroadmin"}', '{}', '', 0, 0);
+(0, 'pkg_xiroadmin', 'package', 'pkg_xiroadmin', '', 0, 1, 1, 0, 0, '', '{}', '', 0, 0);
 
 INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `ordering`, `state`)
 SELECT `extension_id`, 'tpl_xiroadmin', 'template', 'xiroadmin', '', 1, 1, 1, 0, 0, '', '', '', 0, 0 FROM `#__extensions` WHERE `name` = 'pkg_xiroadmin';
@@ -454,7 +455,7 @@ INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, 
 SELECT `extension_id`, 'Vietnamese (vn-VN)', 'language', 'vn-VN', '', 3, 1, 0, 0, 0, '', '', '', 0, 0 FROM `#__extensions` WHERE `name` = 'Vietnamese (vn-VN) Language Pack';
 
 INSERT INTO `#__extensions` (`package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `ordering`, `state`) VALUES
-(0, 'plg_content_xirowebautomenu', 'plugin', 'xirowebautomenu', 'content', 0, 1, 1, 0, 0, '{"name":"plg_content_xirowebautomenu","type":"plugin","creationDate":"October 2020","author":"Dustin Dzung","copyright":"Copyright (C) 2020 XiroWeb. All rights reserved.","authorEmail":"support@xiroweb.com","authorUrl":"www.xiroweb.com","version":"2.0.1","description":"PLG_CONTENT_XIROWEBAUTOMENU_DESCRIPTION","group":"","filename":"xirowebautomenu"}', '{}', '', 0, 0);
+(0, 'plg_content_xirowebautomenu', 'plugin', 'xirowebautomenu', 'content', 0, 1, 1, 0, 0, '', '{}', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -882,8 +883,9 @@ CREATE TABLE IF NOT EXISTS `#__template_styles` (
 
 INSERT INTO `#__template_styles` (`id`, `template`, `client_id`, `home`, `title`, `inheritable`, `parent`, `params`) VALUES
 (10, 'atum', 1, '0', 'Atum - Default', 1, '', '{"hue":"hsl(214, 63%, 20%)","bg-light":"#f0f4fb","text-dark":"#495057","text-light":"#ffffff","link-color":"#2a69b8","special-color":"#001b4c","monochrome":"0","loginLogo":"","loginLogoAlt":"","logoBrandLarge":"","logoBrandLargeAlt":"","logoBrandSmall":"","logoBrandSmallAlt":""}'),
-(11, 'cassiopeia', 0, '1', 'Cassiopeia - Default', 1, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","colorName":"colors_standard","fluidContainer":"0","stickyHeader":0,"backTop":0}'),
-(12, 'xiroadmin', 1, '1', 'Xiroadmin Administrator Template - Default', 1,'','{"hue":"hsl(214,63%,20%)","bg-light":"#f0f4fb","text-dark":"#495057","text-light":"#ffffff","link-color":"#3071a9","link-color-dark":"#29b6f6","special-color":"#001B4C","monochrome":"0","colordefaultbyxiroadmin":"0","virtuemart-ui":"1"}');
+(11, 'cassiopeia', 0, '0', 'Cassiopeia - Default', 1, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","colorName":"colors_standard","fluidContainer":"0","stickyHeader":0,"backTop":0}'),
+(12, 'xiroadmin', 1, '1', 'Xiroadmin Administrator Template - Default', 1,'','{"hue":"hsl(214,63%,20%)","bg-light":"#f0f4fb","text-dark":"#495057","text-light":"#ffffff","link-color":"#3071a9","link-color-dark":"#29b6f6","special-color":"#001B4C","monochrome":"0","colordefaultbyxiroadmin":"0","virtuemart-ui":"1"}'),
+(14, 'xirostart', 0, '1', 'XiroStart - Default', 1, '', '{"brand":"1","logoFile":"","siteTitle":"","siteDescription":"","useFontScheme":"0","systemFontBody":"","systemFontHeading":"","fluidContainer":"0","stickyHeader":"0","backTop":"0","hideModuleWhenEditmodule":"1","hideModuleWhenEditLayout":"0","hideGeneratorMeta":"1","frontendEditModuleUi":"1","body_color_onoff":"0","body_color_box":"#22262a","link_color_onoff":"0","link_color_box":"#224faa","link_color_hover_onoff":"0","link_color_hover_box":"#424077","primary_onoff":"0","primary_box":"#010156"}');
 -- --------------------------------------------------------
 
 --

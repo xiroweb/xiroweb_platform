@@ -1,0 +1,11 @@
+.btn-raised {
+    box-shadow: $xirovar-box-shadow;
+  
+    &:hover {
+      box-shadow: $xirovar-box-shadow-2;
+    }
+  }
+.input-group .btn {
+    border-width: 0;
+    @include xiromixin-boxshadow;
+}

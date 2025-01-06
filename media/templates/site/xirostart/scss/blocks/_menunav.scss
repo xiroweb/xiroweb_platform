@@ -1,0 +1,82 @@
+.navbarxirostart {
+    .navbar {
+        li {
+            border-top-width: 1px;
+            border-top-style: solid;
+            @include media-breakpoint-up(md) {
+                border-top: 0;
+                background-color: var(--nav-link-bg-md);
+                margin-right: 2px;
+
+                .dropdown-menu {
+                    li {
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        margin-top: 0; //fix hover
+        border-width: 0;
+        padding: 0;
+        li {
+            position: relative;
+            padding-left: 1rem;
+
+        }
+        .dropdown-submenu {
+            display: block;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        @include media-breakpoint-up(md) {
+            min-width: 240px;
+            border-width: 1px;
+            padding-left: 0;
+            .dropdown-submenu {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: -7px;
+            }
+            .dropdown-submenu-left {
+                right: 100%;
+                left: auto;
+            }
+            & > li:hover > .dropdown-submenu {
+                display: block;
+            }
+        }
+    }
+
+    // hover dropdown menu navbar
+
+        @include media-breakpoint-up(md) {
+            .dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+            .dropdown>.dropdown-toggle:active {
+                /*Without this, clicking will make it sticky*/
+                pointer-events: none;
+            }
+        }
+}
+
+// Fix menu heading, none link
+// Copy from  .nav-link vendor boostrap
+  .mod-menu__heading{
+    display: block;
+    padding: var(--#{$prefix}nav-link-padding-y) var(--#{$prefix}nav-link-padding-x);
+    @include font-size(var(--#{$prefix}nav-link-font-size));
+    font-weight: var(--#{$prefix}nav-link-font-weight);
+    color: parentColor;
+    text-decoration: if($link-decoration == none, null, none);
+    @include transition($nav-link-transition);
+  
+  }
+

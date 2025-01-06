@@ -3,13 +3,15 @@
     position: relative;
     & > .control-group {
       flex-direction: column;
+      margin: 0 0 0.5rem 0;
     }
-    button.edit_attribute {
-      position: absolute;
-      top: 2rem;
-    }
+    
   }
 }
+.accordion-header-button-bg-x {
+    --accordion-btn-bg: var(--xiroadmin-input-bg);
+}
+
 #articleList {
   .small, small {
     font-size: .7rem;

@@ -19,18 +19,6 @@
       "version": "e15a57"
     },
     {
-      "name": "com_scheduler.scheduler-config",
-      "type": "script",
-      "uri": "com_scheduler/scheduler-config.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "ab7203"
-    },
-    {
       "name": "com_scheduler.admin-view-select-task-search",
       "type": "script",
       "uri": "com_scheduler/admin-view-select-task-search.js",
@@ -53,6 +41,18 @@
       "type": "style",
       "uri": "com_scheduler/admin-view-tasks.css",
       "version": "adee39"
+    },
+    {
+      "name": "com_scheduler.scheduler-config",
+      "type": "script",
+      "uri": "com_scheduler/scheduler-config.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "ab7203"
     }
   ]
 }

@@ -1,0 +1,6 @@
+
+.xiro-transition {
+    &:hover {
+      @include xirovar-transition;
+    }
+  }

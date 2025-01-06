@@ -64,7 +64,7 @@ $tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=c
 		<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'general', Text::_('JCATEGORY')); ?>
 		<div class="row">
 			<div class="col-lg-3">
-				<?php echo $this->form->renderField('automenu'); ?>
+                <?php echo LayoutHelper::render('joomla.edit.category.autocreatemenu', $this); ?>
 				<?php echo LayoutHelper::render('joomla.edit.global', $this); ?>
 			</div>
 			<div class="col-lg-9">

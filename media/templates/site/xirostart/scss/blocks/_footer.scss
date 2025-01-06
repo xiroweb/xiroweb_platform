@@ -1,0 +1,19 @@
+// Footer
+
+.footer {
+  margin-top: $xirostart-grid-gutter;
+  color: $white;
+  background-color: var(--primary);
+
+  a {
+    color: currentColor;
+    &:hover {
+        color: var(--gray-300);
+    }
+  }
+
+  .mod-menu {
+    position: relative;
+  }
+
+}

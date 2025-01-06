@@ -1,0 +1,45 @@
+
+
+
+.site-brand {
+position: relative;
+display: inline-block;
+padding-top: .3125rem;
+padding-bottom: .3125rem;
+font-size: 2rem;
+color: var(--body-color);
+margin-inline-end: auto;
+
+a {
+    color: var(--body-color);
+}
+
+&:hover,
+&:focus {
+    color: scale-color($dark, $lightness: -6%);
+}
+}
+.site-description {
+    font-size: 1rem;
+    white-space: normal;
+    font-weight: 300;
+  }
+a.site-logo {
+    line-height: 0;
+}
+a.site-logo-text {
+    text-decoration: none;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+// after install template, show your-logo for tutorial
+.your-logo {
+    display: block;
+    font-weight: 700;
+}
+.your-logo-description {
+    display: block;
+    font-size: .8rem;
+    font-weight: 300;
+}

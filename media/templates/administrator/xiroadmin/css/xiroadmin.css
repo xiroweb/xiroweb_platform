@@ -60,6 +60,7 @@
   --xiroadmin-module-menuassign-all-bg: var(--xiroadmin-input-bg);
   --xiroadmin-module-menuassign-nopage-bg: #d90e0e4d;
   --xiroadmin-media-tree-active-bg: #ffffff0a;
+  --permissions-sliders-oddCol: #000;
 }
 
 .title-alias input#jform_title {
@@ -132,7 +133,6 @@ div.subform-repeatable-group {
 
 div.subform-repeatable-group > .btn-toolbar .btn.group-move {
   border-radius: .25rem 0 0 .25rem;
-  margin-top: -27px;
   padding: 0;
   line-height: 52px;
 }
@@ -192,7 +192,7 @@ label, caption {
   box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
 }
 
-.content form .btn {
+.content form .btn:not(.group-move-up):not(.group-move-down):not(.group-move) {
   padding: .3rem 1rem;
 }
 
@@ -798,11 +798,11 @@ button.tbody-icon:hover [class^="icon-"], button.tbody-icon:hover [class*=" icon
 
 .com_content.layout-edit .image-media-select > .control-group {
   flex-direction: column;
+  margin: 0 0 .5rem;
 }
 
-.com_content.layout-edit .image-media-select button.edit_attribute {
-  position: absolute;
-  top: 2rem;
+.accordion-header-button-bg-x {
+  --accordion-btn-bg: var(--xiroadmin-input-bg);
 }
 
 #articleList .small, #articleList small {

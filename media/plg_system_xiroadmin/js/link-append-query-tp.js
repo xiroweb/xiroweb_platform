@@ -13,34 +13,37 @@
     const urlParams = new URLSearchParams(currentUrl);
     const functionquery = urlParams.get('function');
 
-    links.forEach((link, i) => {
+    links.forEach((link) => {
 
         // Get the href attribute of the link
-        let href = links[i].getAttribute('href');
-        // Check if link is an absolute URL
-        if (!href.includes('http') && !href.includes('www') && !href.includes('javascript:void') ) {
-    
-            if (href.includes('?')) {
+        let href = link.getAttribute('href');
+        
+        if (href) { // Ensure href is not null
+            // Check if link is an absolute URL
+            if (!href.includes('http') && !href.includes('www') && !href.includes('javascript:void')) {
+              if (href.includes('?')) {
                 href += '&';
-            } else {
+              } else {
                 href += '?';
-            }
-            // Append query string to href
-            href += 'tp=1&positionmodal=1';
-
-            if (functionquery !== null) {
+              }
+              // Append query string to href
+              href += 'tp=1&positionmodal=1';
+    
+              if (functionquery !== null) {
                 href += '&function=' + functionquery;
               }
-            
-            // Update the href attribute of the anchor element
-            links[i].setAttribute('href', href);
-        } 
-        // stop link 
-        if ((href.includes('http') || href.includes('www')) && !href.includes('javascript:void') ) {
-            links[i].classList.add('disable-link-pointer-events');
+    
+              // Update the href attribute of the anchor element
+              link.setAttribute('href', href);
+            }
+    
+            // Stop link
+            if ((href.includes('http') || href.includes('www')) && !href.includes('javascript:void')) {
+              link.classList.add('disable-link-pointer-events');
+            }
           }
 
-      });
+    });
 
   });
 })();

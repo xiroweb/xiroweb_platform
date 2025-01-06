@@ -1,0 +1,19 @@
+.switcher {
+  .toggle-outside {
+    border: $input-border;
+    border-radius: $border-radius;
+    box-shadow: $xirovar-box-shadow;
+
+    &:focus {
+      box-shadow: $xirovar-box-shadow-2;
+    }
+  }
+  input:focus ~ .toggle-outside {
+    border-color: var(--blue);
+    box-shadow: $xirovar-box-shadow-2;
+  }
+
+}
+.disabled {
+  opacity: $btn-disabled-opacity;
+}

@@ -73,11 +73,13 @@ $tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=c
 							);
 						echo LayoutHelper::render('joomla.edit.global', $this); ?>
 				</div>
+                <?php if ($params->get('show_urls_images_backend') == 1) : ?>
 				<div class="article-images">
 					<?php echo $this->loadTemplate('images'); ?>
 				</div>
+                <?php endif; ?>
 				<div>
-					<fieldset class="adminform">
+					<fieldset class="adminform mt-5 clearfix">
 						<?php echo $this->form->getLabel('articletext'); ?>
 						<?php echo $this->form->getInput('articletext'); ?>
 					</fieldset>

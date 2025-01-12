@@ -6,7 +6,7 @@
 			type="installation.language"
 			label="INSTL_SELECT_LANGUAGE_TITLE"
 			class="form-select required ms-2"
-			default="vn-VN"
+			default="vi-VN"
 		/>
 	</fieldset>
 </form>

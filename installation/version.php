@@ -9,5 +9,5 @@
 defined('_JEXEC') or die;
 ?>
 Xiroweb Platform
-Pack version 5.2.2
+Pack version 5.2.3
 

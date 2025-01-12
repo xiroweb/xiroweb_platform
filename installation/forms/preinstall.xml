@@ -5,7 +5,7 @@
 			name="language"
 			type="installation.language"
 			label="INSTL_LANGUAGE_LABEL"
-			default="vn-VN"
+			default="vi-VN"
 			required="true"
 			onchange="Install.setlanguage();"
 		/>

@@ -6,7 +6,7 @@
 			type="installation.language"
 			label="INSTL_SELECT_LANGUAGE_TITLE"
 			class="required"
-			default="vn-VN"
+			default="vi-VN"
 		/>
 		<field
 			name="site_name"
